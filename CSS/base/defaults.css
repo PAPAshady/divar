@@ -1,0 +1,53 @@
+@import "./variables.css";
+@import "./font.css";
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+  direction: rtl;
+  font-family: "iransans", sans-serif;
+  box-sizing: border-box;
+  color: var(--text-color-primary);
+  line-height: 1.6;
+}
+
+*,
+*::before,
+*::after {
+  outline: none;
+  box-sizing: inherit;
+  line-height: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 200ms;
+}
+
+i {
+  user-select: none;
+}
+
+button {
+  font: inherit;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  font: inherit;
+  border: none;
+}
+
+select {
+  font: inherit;
+}
+
+.container {
+  width: 95%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
