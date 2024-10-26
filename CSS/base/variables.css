@@ -1,3 +1,5 @@
+@import "./font.css";
+
 :root {
   /* COLORS */
   --primary-color: rgb(209, 71, 87);
@@ -14,19 +16,15 @@
   --roudned-xl: 16px;
   --rounded-sm: 4px;
 
-  /* FONT */
+  /* FONT SIZES */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.25rem;
   --font-size-xl: 2rem;
 
-  /* MEDIA QUERIES BREAK POINTS */
-  --xs: 480px;
-  --sm: 640px;
-  --lg: 768px;
-  --xl: 1024px;
-  --xxl: 1280px;
+  /* FONT FAMILIES */
+  --primary-font: iransans, sans-serif;
 }
 
 [data-theme="dark"] {

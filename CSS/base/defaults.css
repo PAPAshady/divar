@@ -1,14 +1,13 @@
 @import "./variables.css";
-@import "./font.css";
 
 html {
   scroll-behavior: smooth;
   font-size: 100%;
   direction: rtl;
-  font-family: "iransans", sans-serif;
+  font-family: var(--primary-font);
   box-sizing: border-box;
   color: var(--text-color-primary);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 *,
@@ -17,6 +16,10 @@ html {
   outline: none;
   box-sizing: inherit;
   line-height: inherit;
+}
+
+body {
+  background-color: var(--bg-color);
 }
 
 a {
@@ -40,6 +43,7 @@ button {
 input {
   font: inherit;
   border: none;
+  background: none;
 }
 
 select {
