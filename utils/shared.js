@@ -14,15 +14,15 @@ const removeCookie = (name) => {
 };
 
 const getCookie = (name) => {
-    const cookieArray = document.cookie.split('; ')
-    let result = null;
-    cookieArray.forEach(cookie => {
-        if(cookie.indexOf(name) === 0){
-            result = cookie.substring(name.length + 1)
-        }
+  const cookieArray = document.cookie.split("; ");
+  const result = cookieArray
+    .find((cookie) => {
+      if (cookie.split("=")[0] === name) {
+        return true;
+      }
     })
-
-    return result
+    ?.split("=")[1];
+  return result || null;
 };
 
 export { setCookie, removeCookie, getCookie };
