@@ -23,21 +23,37 @@ function citySearchHandler(citiesArray) {
   );
 
   searchDropDownWrapper.innerHTML = "";
-  const allCityElements = foundedCities
-    .map(
-      (city) =>
-        `<li class="landing__search-drop-down-item">
-          <a
-          class="landing__search-drop-down-link"
-          href="public/main.html?city=${city.name}"
-          onclick="setCookie('city', '${city.name}')"
-          >
-            ${city.name}
-          </a>
-        </li>`
-    )
-    .join("");
-  searchDropDownWrapper.insertAdjacentHTML("beforeend", allCityElements);
+
+  if (foundedCities.length) {
+    const allCityElements = foundedCities
+      .map(
+        (city) =>
+          `<li class="landing__search-drop-down-item">
+            <a
+            class="landing__search-drop-down-link"
+            href="public/main.html?city=${city.name}"
+            onclick="setCookie('city', '${city.name}')"
+            >
+              ${city.name}
+            </a>
+          </li>`
+      )
+      .join("");
+    searchDropDownWrapper.insertAdjacentHTML("beforeend", allCityElements);
+  } else {
+    searchDropDownWrapper.insertAdjacentHTML(
+      "beforeend",
+
+      `<div class="landing__search-drop-down-no-results-box">
+        <img
+        class="landing__search-drop-down-no-results-img"
+        src="public/images/index/no-results.svg"
+        alt="نتیجه ای برای جستوجوی شما پیدا نشد">
+        <p>نتیجه ای برای جستجوی شما پیدا نشد.</p>
+      </div>`
+    );
+  }
+
   searchDropDownWrapper.classList.add("show");
 }
 

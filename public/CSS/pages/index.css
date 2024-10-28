@@ -88,6 +88,7 @@
   width: 100%;
   box-shadow: 2px 2px 5px var(--border-color);
   background-color: #fff;
+  border-radius: var(--rounded-sm);
   transition: all 200ms;
 }
 
@@ -100,6 +101,15 @@
 
 [data-theme="dark"] .landing__search-drop-down {
   background-color: rgb(30, 30, 30);
+}
+
+.landing__search-drop-down-no-results-box{
+  padding-bottom: 2rem;
+}
+
+.landing__search-drop-down-no-results-img{
+  width: 150px;
+  height: 150px;
 }
 
 .landing__search-drop-down-link {
