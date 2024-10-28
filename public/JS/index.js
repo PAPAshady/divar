@@ -2,7 +2,7 @@ import {
   getAllSocials,
   renderSocialsInLandingPage,
 } from "../../utils/socials.js";
-import { setCookie, getCookie, removeLoader } from "../../utils/shared.js";
+import { setCookie, getCookie, removeLoader } from "../../utils/sharedUtils.js";
 import { getAllCities, renderCitiesInLandingPage } from "../../utils/cities.js";
 
 window.setCookie = setCookie;
