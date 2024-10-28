@@ -192,10 +192,6 @@
   height: 25px;
 }
 
-.landing__footer-social-icon-wrapper:hover {
-  color: var(--text-color-secondary);
-}
-
 .landing__footer-social-icon{
   width: 100%;
 }
