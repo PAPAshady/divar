@@ -12,8 +12,8 @@ const renderCitiesInLandingPage = (citiesArray) => {
       (city) =>
         `<a
         class="landing__popular-cities-card"
-        onclick="setCookie('city', '${city.name}')"
-        href="public/main.html?city=${city.name}">
+        onclick="cityClickHandler(${city.id}, '${city.name}')"
+        href="public/posts.html?city=${city.id}">
             <h2 class="landing__popular-cities-text">${city.name}</h2>
         </a>`
     )

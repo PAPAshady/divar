@@ -2,10 +2,12 @@ import {
   getAllSocials,
   renderSocialsInLandingPage,
 } from "../../utils/socials.js";
-import { setCookie, getCookie, removeLoader } from "../../utils/sharedUtils.js";
+import {
+  setToLocalStorage,
+  getFromLocalStorage,
+  removeLoader,
+} from "../../utils/sharedUtils.js";
 import { getAllCities, renderCitiesInLandingPage } from "../../utils/cities.js";
-
-window.setCookie = setCookie;
 
 const $ = document;
 const searchCityInput = $.getElementById("searchCityInput");
@@ -13,6 +15,12 @@ const searchDropDownWrapper = $.getElementById("searchDropDownWrapper");
 const searchInputAndDropDownContainer = $.getElementById(
   "searchInputAndDropDownContainer"
 );
+
+window.cityClickHandler = cityClickHandler;
+
+function cityClickHandler(cityID, cityName) {
+  setToLocalStorage("cities", [{ id: cityID, name: cityName }]);
+}
 
 function citySearchHandler(citiesArray) {
   const searchValue = searchCityInput.value.trim();
@@ -35,8 +43,8 @@ function citySearchHandler(citiesArray) {
           `<li class="landing__search-drop-down-item">
             <a
             class="landing__search-drop-down-link"
-            href="public/main.html?city=${city.name}"
-            onclick="setCookie('city', '${city.name}')"
+            href="public/posts.html?city=${city.id}"
+            onclick="cityClickHandler(${city.id}, '${city.name}')"
             >
               ${city.name}
             </a>
@@ -62,10 +70,10 @@ function citySearchHandler(citiesArray) {
 }
 
 window.addEventListener("load", async () => {
-  const cityCookie = getCookie("city");
+  const userCity = getFromLocalStorage("cities");
 
-  if (cityCookie) {
-    location.href = `public/main.html?city=${cityCookie}`;
+  if (userCity) {
+    location.href = `public/posts.html?city=${userCity[0].id}`;
     return;
   }
 
