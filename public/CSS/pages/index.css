@@ -77,6 +77,8 @@
 .landing__search-drop-down {
   display: flex;
   flex-direction: column;
+  max-height: 300px;
+  overflow-y: auto;
   border: 1px solid var(--border-color);
   position: absolute;
   top: 55%;
@@ -97,7 +99,7 @@
 }
 
 [data-theme="dark"] .landing__search-drop-down {
-  background-color: rgb(36, 36, 36);
+  background-color: rgb(30, 30, 30);
 }
 
 .landing__search-drop-down-link {

@@ -3,6 +3,44 @@ import { getAllCities, renderCitiesInLandingPage } from "../../utils/cities.js";
 
 window.setCookie = setCookie;
 
+const $ = document;
+const searchCityInput = $.getElementById("searchCityInput");
+const searchDropDownWrapper = $.getElementById("searchDropDownWrapper");
+const searchInputAndDropDownContainer = $.getElementById(
+  "searchInputAndDropDownContainer"
+);
+
+function citySearchHandler(citiesArray) {
+  const searchValue = searchCityInput.value.trim();
+
+  if (!searchValue) {
+    searchDropDownWrapper.classList.remove("show");
+    return;
+  }
+
+  const foundedCities = citiesArray.filter((city) =>
+    city.name.startsWith(searchValue)
+  );
+
+  searchDropDownWrapper.innerHTML = "";
+  const allCityElements = foundedCities
+    .map(
+      (city) =>
+        `<li class="landing__search-drop-down-item">
+          <a
+          class="landing__search-drop-down-link"
+          href="public/main.html?city=${city.name}"
+          onclick="setCookie('city', '${city.name}')"
+          >
+            ${city.name}
+          </a>
+        </li>`
+    )
+    .join("");
+  searchDropDownWrapper.insertAdjacentHTML("beforeend", allCityElements);
+  searchDropDownWrapper.classList.add("show");
+}
+
 window.addEventListener("load", async () => {
   const cityCookie = getCookie("city");
 
@@ -14,4 +52,15 @@ window.addEventListener("load", async () => {
   const { data } = await getAllCities();
   const popularCities = data.cities.filter((city) => city.popular);
   renderCitiesInLandingPage(popularCities);
+
+  searchCityInput.addEventListener("keyup", () =>
+    citySearchHandler(data.cities)
+  );
+});
+
+// close search drop down if user click is not inside the drop down
+window.addEventListener("click", (e) => {
+  if (!searchInputAndDropDownContainer.contains(e.target)) {
+    searchDropDownWrapper.classList.remove("show");
+  }
 });
