@@ -10,9 +10,9 @@
   align-items: center;
 }
 
-.loader__container.show{
-    z-index: 10;
-    display: flex;
+.loader__container.show {
+  z-index: 10;
+  display: flex;
 }
 
 .loader__spinner {

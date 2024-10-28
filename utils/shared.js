@@ -26,7 +26,7 @@ const getCookie = (name) => {
 };
 
 const removeLoader = () => {
-  document.getElementById('loader').classList.remove('show')
-}
+  document.getElementById("loader").classList.remove("show");
+};
 
 export { setCookie, removeCookie, getCookie, removeLoader };

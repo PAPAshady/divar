@@ -1,6 +1,6 @@
 @import "../shared.css";
 @import "../components/input.css";
-@import '../components/loader.css';
+@import "../components/loader.css";
 
 .landing {
   width: 100%;
@@ -104,11 +104,11 @@
   background-color: rgb(30, 30, 30);
 }
 
-.landing__search-drop-down-no-results-box{
+.landing__search-drop-down-no-results-box {
   padding-bottom: 2rem;
 }
 
-.landing__search-drop-down-no-results-img{
+.landing__search-drop-down-no-results-img {
   width: 150px;
   height: 150px;
 }
@@ -187,12 +187,12 @@
   padding: 1.5rem 0;
 }
 
-.landing__footer-social-icon-wrapper{
+.landing__footer-social-icon-wrapper {
   width: 25px;
   height: 25px;
 }
 
-.landing__footer-social-icon{
+.landing__footer-social-icon {
   width: 100%;
 }
 
