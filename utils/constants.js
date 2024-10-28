@@ -1,2 +1,4 @@
-const baseApiUrl = "https://divarapi.liara.run/v1/";
-export { baseApiUrl };
+const filesUrl = "https://divarapi.liara.run/";
+const baseApiUrl = `${filesUrl}v1/`;
+
+export { baseApiUrl, filesUrl };

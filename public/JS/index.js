@@ -1,3 +1,7 @@
+import {
+  getAllSocials,
+  renderSocialsInLandingPage,
+} from "../../utils/socials.js";
 import { setCookie, getCookie, removeLoader } from "../../utils/shared.js";
 import { getAllCities, renderCitiesInLandingPage } from "../../utils/cities.js";
 
@@ -66,7 +70,9 @@ window.addEventListener("load", async () => {
   }
 
   const { data } = await getAllCities();
+  const socialsData = await getAllSocials();
   const popularCities = data.cities.filter((city) => city.popular);
+  renderSocialsInLandingPage(socialsData.data.socials);
   renderCitiesInLandingPage(popularCities);
   removeLoader();
 

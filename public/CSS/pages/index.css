@@ -187,8 +187,17 @@
   padding: 1.5rem 0;
 }
 
+.landing__footer-social-icon-wrapper{
+  width: 25px;
+  height: 25px;
+}
+
 .landing__footer-social-icon-wrapper:hover {
   color: var(--text-color-secondary);
+}
+
+.landing__footer-social-icon{
+  width: 100%;
 }
 
 @media (min-width: 480px) {
