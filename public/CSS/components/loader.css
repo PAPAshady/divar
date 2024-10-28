@@ -1,0 +1,36 @@
+.loader__container {
+  width: 100dvw;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  display: none;
+  z-index: -1;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader__container.show{
+    z-index: 10;
+    display: flex;
+}
+
+.loader__spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #fff;
+  border-bottom-color: var(--primary-color);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

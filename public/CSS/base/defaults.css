@@ -20,6 +20,7 @@ html {
 
 body {
   background-color: var(--bg-color);
+  position: relative;
 }
 
 a {

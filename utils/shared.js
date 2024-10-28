@@ -25,4 +25,8 @@ const getCookie = (name) => {
   return result || null;
 };
 
-export { setCookie, removeCookie, getCookie };
+const removeLoader = () => {
+  document.getElementById('loader').classList.remove('show')
+}
+
+export { setCookie, removeCookie, getCookie, removeLoader };

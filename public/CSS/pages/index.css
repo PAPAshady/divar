@@ -1,5 +1,6 @@
 @import "../shared.css";
 @import "../components/input.css";
+@import '../components/loader.css';
 
 .landing {
   width: 100%;

@@ -1,4 +1,4 @@
-import { setCookie, getCookie } from "../../utils/shared.js";
+import { setCookie, getCookie, removeLoader } from "../../utils/shared.js";
 import { getAllCities, renderCitiesInLandingPage } from "../../utils/cities.js";
 
 window.setCookie = setCookie;
@@ -68,6 +68,7 @@ window.addEventListener("load", async () => {
   const { data } = await getAllCities();
   const popularCities = data.cities.filter((city) => city.popular);
   renderCitiesInLandingPage(popularCities);
+  removeLoader();
 
   searchCityInput.addEventListener("keyup", () =>
     citySearchHandler(data.cities)
