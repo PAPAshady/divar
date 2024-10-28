@@ -74,7 +74,7 @@ window.addEventListener("load", async () => {
   );
 });
 
-// close search drop down if user click is not inside the drop down
+// close search drop down if user clicks outside of search drop down
 window.addEventListener("click", (e) => {
   if (!searchInputAndDropDownContainer.contains(e.target)) {
     searchDropDownWrapper.classList.remove("show");
