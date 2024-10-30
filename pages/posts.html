@@ -15,6 +15,103 @@
     <link rel="stylesheet" href="../public/CSS/pages/posts.css" />
   </head>
   <body>
+    <!--------------- HEADER START --------------->
+
+    <header class="header">
+      <div class="header__search-boxes-and-back-btn">
+        <div class="header__search-boxes-and-back-btn-content container">
+          <!-- add 'show' class to show close btn of mobile global search box -->
+          <button
+            class="header__close-mobile-global-search-box-btn"
+            id="closeMobileGlobalSearchBox"
+          >
+            <i class="fa fa-arrow-right"></i>
+          </button>
+
+          <div class="header__global-search-box-and-cities-search-box">
+            <div
+              class="header__global-search-box-and-cities-search-box-content"
+            >
+              <div class="header__global-search-box-wrapper">
+                <input
+                  type="text"
+                  id="globalSearchInput"
+                  class="header__global-search-input"
+                  placeholder="جستوجو در همه آگهی ها"
+                />
+                <i class="fa fa-search header__global-search-icon"></i>
+              </div>
+              <div class="header__cities-search-box-wrapper">
+                <button
+                  class="header__cities-search-box-btn"
+                  id="openCitiesSearchBoxBtn"
+                >
+                  <span id="openCitiesSearchBoxBtnText">اصفهان</span>
+                  <i class="far fa-location-dot"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header__navbar-container">
+        <nav class="header__navbar">
+
+          <!-- add 'active' class to to show the current active element to user -->
+
+          <div class="header__navbar-item-wrapper   active">
+            <a href="Javascript:void(0)" class="header__navbar-item-link">
+              <img
+                src="../public/images/logos/logo.svg"
+                class="header__navbar-item-img"
+                alt="دیوار"
+              />
+              <span class="header__navbar-item-link-text">آگهی ها</span>
+            </a>
+          </div>
+
+          <div class="header__navbar-item-wrapper">
+            <a href="Javascript:void(0)" class="header__navbar-item-link">
+              <i class="fa fa-list header__navbar-item-link-icon"></i>
+              <span class="header__navbar-item-link-text">دسته ها</span>
+            </a>
+          </div>
+
+          <div class="header__navbar-item-wrapper">
+            <a href="Javascript:void(0)" class="header__navbar-item-link">
+              <i
+                class="fa-solid fa-circle-plus header__navbar-item-link-icon"
+              ></i>
+              <span class="header__navbar-item-link-text">ثبت آگهی</span>
+            </a>
+          </div>
+
+          <div class="header__navbar-item-wrapper">
+            <a href="Javascript:void(0)" class="header__navbar-item-link">
+              <i class="fa fa-moon header__navbar-item-link-icon"></i>
+              <span class="header__navbar-item-link-text">حالت تاریک</span>
+            </a>
+          </div>
+
+          <div class="header__navbar-item-wrapper">
+            <a href="Javascript:void(0)" class="header__navbar-item-link">
+              <i class="fa fa-user header__navbar-item-link-icon"></i>
+              <span class="header__navbar-item-link-text">دیوار من</span>
+            </a>
+          </div>
+
+        </nav>
+      </div>
+    </header>
+
+    <p style="padding-top: 90px">sdklndskldsdjkfnvcdflvjbdfklhvbdfkvbdfkvbh</p>
+    <!--------------- HEADER END --------------->
+
+    <!-- add 'show' class to make the loader visible -->
+    <div class="loader__container" id="loader">
+      <span class="loader__spinner"></span>
+    </div>
 
     <!---------- SCRIPTS ---------->
 

@@ -33,18 +33,24 @@ i {
   user-select: none;
 }
 
+span {
+  font: inherit;
+}
+
 button {
   font: inherit;
   padding: 0;
   background: none;
   border: none;
   cursor: pointer;
+  color: inherit;
 }
 
 input {
   font: inherit;
   border: none;
   background: none;
+  color: inherit;
 }
 
 select {
