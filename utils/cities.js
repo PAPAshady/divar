@@ -13,7 +13,7 @@ const renderCitiesInLandingPage = (citiesArray) => {
         `<a
         class="landing__popular-cities-card"
         onclick="cityClickHandler(${city.id}, '${city.name}')"
-        href="public/posts.html?city=${city.id}">
+        href="pages/posts.html?city=${city.id}">
             <h2 class="landing__popular-cities-text">${city.name}</h2>
         </a>`
     )

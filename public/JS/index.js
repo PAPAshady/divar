@@ -43,7 +43,7 @@ function citySearchHandler(citiesArray) {
           `<li class="landing__search-drop-down-item">
             <a
             class="landing__search-drop-down-link"
-            href="public/posts.html?city=${city.id}"
+            href="pages/posts.html?city=${city.id}"
             onclick="cityClickHandler(${city.id}, '${city.name}')"
             >
               ${city.name}
