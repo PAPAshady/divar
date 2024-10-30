@@ -18,8 +18,26 @@
     <!--------------- HEADER START --------------->
 
     <header class="header">
-      <div class="header__search-boxes-and-back-btn">
-        <div class="header__search-boxes-and-back-btn-content container">
+      <div class="header__content-wrapper">
+        <div class="header__content container">
+          <a href="/" class="header__logo">
+            <img
+              class="header__logo-img"
+              src="../public/images/logos/logo.svg"
+              alt="دیوار"
+            />
+          </a>
+
+          <button class="header__btn" id="openCitiesSearchBoxBtn">
+            <i class="far fa-location-dot"></i>
+            <span id="openCitiesSearchBoxBtnText">اصفهان</span>
+          </button>
+
+          <button class="header__btn">
+            <span>دسته ها</span>
+            <i class="fa fa-chevron-down"></i>
+          </button>
+
           <!-- add 'show' class to show close btn of mobile global search box -->
           <button
             class="header__close-mobile-global-search-box-btn"
@@ -28,9 +46,9 @@
             <i class="fa fa-arrow-right"></i>
           </button>
 
-          <div class="header__global-search-box-and-cities-search-box">
+          <div class="header__global-search-box-and-mobile-cities-search-box">
             <div
-              class="header__global-search-box-and-cities-search-box-content"
+              class="header__global-search-box-and-mobile-cities-search-box-content"
             >
               <div class="header__global-search-box-wrapper">
                 <input
@@ -41,9 +59,9 @@
                 />
                 <i class="fa fa-search header__global-search-icon"></i>
               </div>
-              <div class="header__cities-search-box-wrapper">
+              <div class="header__mobile-cities-search-box-wrapper">
                 <button
-                  class="header__cities-search-box-btn"
+                  class="header__mobile-cities-search-box-btn"
                   id="openCitiesSearchBoxBtn"
                 >
                   <span id="openCitiesSearchBoxBtnText">اصفهان</span>
@@ -57,10 +75,9 @@
 
       <div class="header__navbar-container">
         <nav class="header__navbar">
-
           <!-- add 'active' class to to show the current active element to user -->
 
-          <div class="header__navbar-item-wrapper   active">
+          <div class="header__navbar-item-wrapper header__posts-btn active">
             <a href="Javascript:void(0)" class="header__navbar-item-link">
               <img
                 src="../public/images/logos/logo.svg"
@@ -71,14 +88,14 @@
             </a>
           </div>
 
-          <div class="header__navbar-item-wrapper">
+          <div class="header__navbar-item-wrapper header__categories-btn">
             <a href="Javascript:void(0)" class="header__navbar-item-link">
               <i class="fa fa-list header__navbar-item-link-icon"></i>
               <span class="header__navbar-item-link-text">دسته ها</span>
             </a>
           </div>
 
-          <div class="header__navbar-item-wrapper">
+          <div class="header__navbar-item-wrapper header__new-post-btn">
             <a href="Javascript:void(0)" class="header__navbar-item-link">
               <i
                 class="fa-solid fa-circle-plus header__navbar-item-link-icon"
@@ -87,25 +104,23 @@
             </a>
           </div>
 
-          <div class="header__navbar-item-wrapper">
+          <div class="header__navbar-item-wrapper header__dark-mode-btn">
             <a href="Javascript:void(0)" class="header__navbar-item-link">
               <i class="fa fa-moon header__navbar-item-link-icon"></i>
               <span class="header__navbar-item-link-text">حالت تاریک</span>
             </a>
           </div>
 
-          <div class="header__navbar-item-wrapper">
+          <div class="header__navbar-item-wrapper header__account-btn">
             <a href="Javascript:void(0)" class="header__navbar-item-link">
               <i class="fa fa-user header__navbar-item-link-icon"></i>
               <span class="header__navbar-item-link-text">دیوار من</span>
             </a>
           </div>
-
         </nav>
       </div>
     </header>
 
-    <p style="padding-top: 90px">sdklndskldsdjkfnvcdflvjbdfklhvbdfkvbdfkvbh</p>
     <!--------------- HEADER END --------------->
 
     <!-- add 'show' class to make the loader visible -->
