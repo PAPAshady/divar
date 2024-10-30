@@ -73,7 +73,7 @@ window.addEventListener("load", async () => {
   const userCity = getFromLocalStorage("cities");
 
   if (userCity) {
-    location.href = `public/posts.html?city=${userCity[0].id}`;
+    location.href = `pages/posts.html?city=${userCity[0].id}`;
     return;
   }
 
