@@ -1,3 +1,5 @@
+/*************** HEADER TEMPLATE START ***************/
+
 .header {
   z-index: 5;
   top: 0;
@@ -303,3 +305,12 @@
     order: 3;
   }
 }
+
+/*************** HEADER TEMPLATE END ***************/
+
+
+/*************** CITIES SEARCH BOX START ***************/
+
+
+
+/*************** CITIES SEARCH BOX END ***************/

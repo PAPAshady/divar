@@ -18,6 +18,8 @@
     <!--------------- HEADER START --------------->
 
     <header class="header">
+      <!--------------- HEADER TEMPLATE START --------------->
+
       <div class="header__container">
         <div class="header__content-wrapper">
           <div class="header__content container">
@@ -128,6 +130,165 @@
           </nav>
         </div>
       </div>
+
+      <!--------------- HEADER TEMPLATE END --------------->
+
+      <!--------------- CITIES SEARCH BOX START --------------->
+
+      <div class="cities-search-box">
+        <div class="cities-search-box__header">
+          <div class="cities-search-box__header-texts">
+            <p class="cities-search-box__box-title">انتخاب شهر</p>
+            <button
+              class="cities-search-box__remove-all-cities-btn"
+              id="removeAllCitiesBtn"
+            >
+              حذف همه
+            </button>
+          </div>
+
+          <div
+            class="cities-search-box__selected-cities-container"
+            id="selectedCitiesWrapper"
+          >
+            <div class="cities-search-box__selected-city">
+              <span class="cities-search-box__selected-city-title">اصفهان</span>
+              <button class="cities-search-box__remove-selected-city-btn">
+                x
+              </button>
+            </div>
+
+            <div class="cities-search-box__selected-city">
+              <span class="cities-search-box__selected-city-title">تبریز</span>
+              <button class="cities-search-box__remove-selected-city-btn">
+                x
+              </button>
+            </div>
+
+            <div class="cities-search-box__selected-city">
+              <span class="cities-search-box__selected-city-title">مشهد</span>
+              <button class="cities-search-box__remove-selected-city-btn">
+                x
+              </button>
+            </div>
+          </div>
+
+          <div class="cities-search-box__input-wrapper">
+            <i class="fa fa-search cities-search-box__input-icon"></i>
+            <input
+              type="text"
+              class="cities-search-box__input"
+              id="searchCityInput"
+              placeholder="جستوجو در شهر ها"
+            />
+          </div>
+        </div>
+
+        <div class="cities-search-box__body">
+          <!-- add 'show' class to .cities-search-box__provinces-wrapper or .cities-search-box__cities-wrapper to make them visible -->
+
+          <div
+            class="cities-search-box__provinces-wrapper"
+            id="provincesWrapper"
+          >
+            <a href="Javascript:void(0)" class="cities-search-box__province">
+              <span class="cities-search-box__province-title"
+                >آذربایجان شرقی</span
+              >
+              <i
+                class="fa fas fa-chevron-left cities-search-box__province-arrow-icon"
+              ></i>
+            </a>
+            <a href="Javascript:void(0)" class="cities-search-box__province">
+              <span class="cities-search-box__province-title">اصفهان</span>
+              <i
+                class="fa fas fa-chevron-left cities-search-box__province-arrow-icon"
+              ></i>
+            </a>
+            <a href="Javascript:void(0)" class="cities-search-box__province">
+              <span class="cities-search-box__province-title">تبریز</span>
+              <i
+                class="fa fas fa-chevron-left cities-search-box__province-arrow-icon"
+              ></i>
+            </a>
+          </div>
+
+          <div class="cities-search-box__cities">
+            <a
+              class="cities-search-box__close-cities-wrapper-btn"
+              href="Javascript:void(0)"
+              id="closeCitiesWrapperBtn"
+            >
+              <i class="fa fas fas fa-chevron-right"></i>
+              همه استان ها
+            </a>
+
+            <a href="#" class="cities-search-box__city">
+              <label class="cities-search-box__city-check-box-wrapper">
+                همه شهر های آذربایجان شرقی
+                <input
+                  class="cities-search-box__city-chckbox"
+                  type="checkbox"
+                  id="allCitiesCheckBox"
+                />
+                <span class="cities-search-box__city-check-box-ui"></span>
+              </label>
+            </a>
+
+            <div class="cities-search-box__cities-wrapper" id="citiesWrapper">
+              <a href="#" class="cities-search-box__city">
+                <label class="cities-search-box__city-check-box-wrapper">
+                  تبریز
+                  <input
+                    class="cities-search-box__city-chckbox"
+                    type="checkbox"
+                  />
+                  <span class="cities-search-box__city-check-box-ui"></span>
+                </label>
+              </a>
+
+              <a href="#" class="cities-search-box__city">
+                <label class="cities-search-box__city-check-box-wrapper">
+                  آذرشهر
+                  <input
+                    class="cities-search-box__city-chckbox"
+                    type="checkbox"
+                  />
+                  <span class="cities-search-box__city-check-box-ui"></span>
+                </label>
+              </a>
+
+              <a href="#" class="cities-search-box__city">
+                <label class="cities-search-box__city-check-box-wrapper">
+                  اهر
+                  <input
+                    class="cities-search-box__city-chckbox"
+                    type="checkbox"
+                  />
+                  <span class="cities-search-box__city-check-box-ui"></span>
+                </label>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cities-search-box__footer">
+          <button
+            id="closeCitiesSearchBoxBtn"
+            class="cities-search-box__footer-btn"
+          >
+            انصراف
+          </button>
+          <button
+            id="submitSelectedCitiesBtn"
+            class="cities-search-box__footer-btn"
+          >
+            تایید
+          </button>
+        </div>
+      </div>
+
+      <!--------------- CITIES SEARCH BOX END --------------->
     </header>
 
     <!--------------- HEADER END --------------->
