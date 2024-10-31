@@ -1,4 +1,4 @@
-/*************** HEADER TEMPLATE START ***************/
+@import "../components/cities-search-box.css";
 
 .header {
   z-index: 5;
@@ -305,12 +305,3 @@
     order: 3;
   }
 }
-
-/*************** HEADER TEMPLATE END ***************/
-
-
-/*************** CITIES SEARCH BOX START ***************/
-
-
-
-/*************** CITIES SEARCH BOX END ***************/

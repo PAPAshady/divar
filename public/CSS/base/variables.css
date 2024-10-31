@@ -3,18 +3,19 @@
 :root {
   /* COLORS */
   --primary-color: rgb(209, 71, 87);
-  --primary-color-hover: rgb(248, 238, 238);
+  --primary-color-hover: rgba(209, 71, 87, 0.05);
   --bg-color: rgb(255, 255, 255);
   --text-color-primary: rgb(112, 112, 112);
   --text-color-secondary: rgb(33, 33, 33);
   --placeholder-text-color: rgb(211, 211, 211);
   --btn-bg-color-hover: rgb(245, 245, 245);
-  --btn-bg-color-disabled: rgb(64, 64, 64);
+  --btn-bg-color-disabled: rgb(245, 245, 245);
   --border-color: rgb(235, 235, 235);
 
   /* BORDER-RADIUSES */
   --rounded-xl: 16px;
   --rounded-sm: 4px;
+  --rounded-full: 1000px;
 
   /* FONT SIZES */
   --font-size-xs: 0.75rem;
@@ -28,13 +29,12 @@
 }
 
 [data-theme="dark"] {
-  --primary-color-hover: rgb(46, 36, 36);
   --bg-color: rgb(36, 36, 36);
   --text-color-primary: rgb(159, 159, 159);
   --text-color-secondary: rgb(227, 227, 227);
   --placeholder-text-color: rgb(88, 88, 88);
   --btn-bg-color-hover: rgb(45, 45, 45);
-  --btn-bg-color-disabled: rgb(245, 245, 245);
+  --btn-bg-color-disabled: rgb(64, 64, 64);
   --border-color: rgb(53, 53, 53);
 }
 

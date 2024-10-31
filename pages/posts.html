@@ -132,10 +132,15 @@
       </div>
 
       <!--------------- HEADER TEMPLATE END --------------->
+    </header>
 
-      <!--------------- CITIES SEARCH BOX START --------------->
+    <!--------------- HEADER END --------------->
 
-      <div class="cities-search-box">
+    <!--------------- CITIES SEARCH BOX START --------------->
+
+    <!-- add 'show' class to show cities search box to user -->
+    <div class="cities-search-box">
+      <div class="cities-search-box__content">
         <div class="cities-search-box__header">
           <div class="cities-search-box__header-texts">
             <p class="cities-search-box__box-title">انتخاب شهر</p>
@@ -171,6 +176,22 @@
                 x
               </button>
             </div>
+
+            <div class="cities-search-box__selected-city">
+              <span class="cities-search-box__selected-city-title"
+                >شاهین شهر</span
+              >
+              <button class="cities-search-box__remove-selected-city-btn">
+                x
+              </button>
+            </div>
+
+            <div class="cities-search-box__selected-city">
+              <span class="cities-search-box__selected-city-title">شهررضا</span>
+              <button class="cities-search-box__remove-selected-city-btn">
+                x
+              </button>
+            </div>
           </div>
 
           <div class="cities-search-box__input-wrapper">
@@ -185,28 +206,34 @@
         </div>
 
         <div class="cities-search-box__body">
-          <!-- add 'show' class to .cities-search-box__provinces-wrapper or .cities-search-box__cities-wrapper to make them visible -->
+          <!-- add 'show' class to .cities-search-box__provinces-wrapper or .cities-search-box__cities to make them visible -->
 
           <div
-            class="cities-search-box__provinces-wrapper"
+            class="cities-search-box__provinces-wrapper show"
             id="provincesWrapper"
           >
             <a href="Javascript:void(0)" class="cities-search-box__province">
-              <span class="cities-search-box__province-title"
-                >آذربایجان شرقی</span
-              >
+              <span class="cities-search-box__province-title">
+                آذربایجان شرقی
+              </span>
               <i
                 class="fa fas fa-chevron-left cities-search-box__province-arrow-icon"
               ></i>
             </a>
+
             <a href="Javascript:void(0)" class="cities-search-box__province">
-              <span class="cities-search-box__province-title">اصفهان</span>
+              <span class="cities-search-box__province-title">
+                آذربایجان شرقی
+              </span>
               <i
                 class="fa fas fa-chevron-left cities-search-box__province-arrow-icon"
               ></i>
             </a>
+
             <a href="Javascript:void(0)" class="cities-search-box__province">
-              <span class="cities-search-box__province-title">تبریز</span>
+              <span class="cities-search-box__province-title">
+                آذربایجان شرقی
+              </span>
               <i
                 class="fa fas fa-chevron-left cities-search-box__province-arrow-icon"
               ></i>
@@ -219,53 +246,64 @@
               href="Javascript:void(0)"
               id="closeCitiesWrapperBtn"
             >
-              <i class="fa fas fas fa-chevron-right"></i>
+              <i
+                class="fa fas fas fa-arrow-right cities-search-box__close-cities-btn-icon"
+              ></i>
               همه استان ها
             </a>
 
             <a href="#" class="cities-search-box__city">
-              <label class="cities-search-box__city-check-box-wrapper">
-                همه شهر های آذربایجان شرقی
-                <input
-                  class="cities-search-box__city-chckbox"
-                  type="checkbox"
-                  id="allCitiesCheckBox"
-                />
-                <span class="cities-search-box__city-check-box-ui"></span>
+              <label class="cities-search-box__city-content">
+                همه شهر های آذربایجان
+                <div class="cities-search-box__check-box-wrapper">
+                  <input
+                    class="cities-search-box__city-check-box-input"
+                    type="checkbox"
+                    id="allCitiesCheckBox"
+                  />
+                  <span class="cities-search-box__city-check-box-ui"></span>
+                </div>
               </label>
             </a>
 
             <div class="cities-search-box__cities-wrapper" id="citiesWrapper">
               <a href="#" class="cities-search-box__city">
-                <label class="cities-search-box__city-check-box-wrapper">
+                <label class="cities-search-box__city-content">
                   تبریز
-                  <input
-                    class="cities-search-box__city-chckbox"
-                    type="checkbox"
-                  />
-                  <span class="cities-search-box__city-check-box-ui"></span>
+                  <div class="cities-search-box__check-box-wrapper">
+                    <input
+                      class="cities-search-box__city-check-box-input"
+                      type="checkbox"
+                      id="allCitiesCheckBox"
+                    />
+                    <span class="cities-search-box__city-check-box-ui"></span>
+                  </div>
                 </label>
               </a>
-
               <a href="#" class="cities-search-box__city">
-                <label class="cities-search-box__city-check-box-wrapper">
-                  آذرشهر
-                  <input
-                    class="cities-search-box__city-chckbox"
-                    type="checkbox"
-                  />
-                  <span class="cities-search-box__city-check-box-ui"></span>
+                <label class="cities-search-box__city-content">
+                  تبریز
+                  <div class="cities-search-box__check-box-wrapper">
+                    <input
+                      class="cities-search-box__city-check-box-input"
+                      type="checkbox"
+                      id="allCitiesCheckBox"
+                    />
+                    <span class="cities-search-box__city-check-box-ui"></span>
+                  </div>
                 </label>
               </a>
-
               <a href="#" class="cities-search-box__city">
-                <label class="cities-search-box__city-check-box-wrapper">
-                  اهر
-                  <input
-                    class="cities-search-box__city-chckbox"
-                    type="checkbox"
-                  />
-                  <span class="cities-search-box__city-check-box-ui"></span>
+                <label class="cities-search-box__city-content">
+                  تبریز
+                  <div class="cities-search-box__check-box-wrapper">
+                    <input
+                      class="cities-search-box__city-check-box-input"
+                      type="checkbox"
+                      id="allCitiesCheckBox"
+                    />
+                    <span class="cities-search-box__city-check-box-ui"></span>
+                  </div>
                 </label>
               </a>
             </div>
@@ -275,23 +313,22 @@
         <div class="cities-search-box__footer">
           <button
             id="closeCitiesSearchBoxBtn"
-            class="cities-search-box__footer-btn"
+            class="cities-search-box__footer-btn cities-search-box__footer-btn--cancel"
           >
             انصراف
           </button>
           <button
             id="submitSelectedCitiesBtn"
-            class="cities-search-box__footer-btn"
+            class="cities-search-box__footer-btn cities-search-box__footer-btn--submit"
+            disabled
           >
             تایید
           </button>
         </div>
       </div>
+    </div>
 
-      <!--------------- CITIES SEARCH BOX END --------------->
-    </header>
-
-    <!--------------- HEADER END --------------->
+    <!--------------- CITIES SEARCH BOX END --------------->
 
     <!-- add 'show' class to make the loader visible -->
     <div class="loader__container" id="loader">
