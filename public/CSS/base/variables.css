@@ -26,6 +26,10 @@
 
   /* FONT FAMILIES */
   --primary-font: iransans, sans-serif;
+
+  /* BOX SHADOWS */
+  --shadow-lg: 0 -8px 32px -4px rgba(0, 0, 0, 0.04),
+    0 16px 24px -6px rgba(0, 0, 0, 0.04), 0 1px 6px 0 rgba(0, 0, 0, 0.08);
 }
 
 [data-theme="dark"] {
@@ -36,6 +40,9 @@
   --btn-bg-color-hover: rgb(45, 45, 45);
   --btn-bg-color-disabled: rgb(64, 64, 64);
   --border-color: rgb(53, 53, 53);
+  --shadow-lg: 0 -8px 32px -4px rgba(255, 255, 255, 0.04),
+    0 16px 24px -6px rgba(255, 255, 255, 0.04),
+    0 1px 6px 0 rgba(255, 255, 255, 0.08);
 }
 
 /* Color palette */

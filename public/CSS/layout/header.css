@@ -62,7 +62,7 @@
   font-size: 1.1rem;
 }
 
-.header__close-mobile-global-search-box-btn.show {
+.header.show-search-drop-down .header__close-mobile-global-search-box-btn {
   display: flex;
 }
 
@@ -71,6 +71,7 @@
   align-items: center;
   padding: 0.5rem 0;
   width: 100%;
+  position: relative;
 }
 
 .header__global-search-box-and-mobile-cities-search-box-content {
@@ -93,6 +94,7 @@
   align-items: center;
   flex-grow: 1;
   padding: 0.3rem 0.5rem;
+  position: relative;
 }
 
 .header__global-search-input {
@@ -104,6 +106,122 @@
   text-overflow: ellipsis;
 }
 
+.header__global-search-box-drop-down {
+  position: fixed;
+  background-color: var(--bg-color);
+  width: 100dvw;
+  height: 100dvh;
+  right: 0;
+  top: 60px;
+  z-index: 10;
+  padding-bottom: 1rem;
+  display: none;
+}
+
+.header.show-search-drop-down .header__global-search-box-drop-down {
+  display: block;
+}
+
+.header__global-search-results-wrapper.show
+  ~ .header__user-and-popular-search-tags-container {
+  display: none;
+}
+
+.header__global-search-results-wrapper {
+  display: none;
+}
+
+.header__global-search-results-wrapper.show {
+  display: block;
+}
+
+.header__current-searched-value-link {
+  display: flex;
+  align-items: center;
+  color: var(--text-color-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.header__current-searched-value-link:hover {
+  background-color: var(--btn-bg-color-hover);
+}
+
+.header__current-searched-value-link-icon {
+  margin-left: 1rem;
+  color: var(--text-color-primary);
+}
+
+.header__search-result {
+  display: block;
+  padding: 0.75rem 1rem;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.header__search-result:hover {
+  background-color: var(--btn-bg-color-hover);
+}
+
+.header__search-result:not(:last-child) {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header__search-result-title-and-posts {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: inherit;
+}
+
+.header__search-result-title {
+  color: var(--text-color-secondary);
+}
+
+.header__user-and-popular-search-tags-container {
+  padding: 1rem;
+}
+
+.header__user-favorite-searches {
+  text-align: center;
+  display: block;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  margin-bottom: 2rem;
+}
+
+.header__popular-searches {
+  display: none;
+}
+
+.header__popular-searches-title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.header__popular-searches-tags-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.header__popular-search-tag {
+  border: 1px solid var(--border-color);
+  border-radius: var(--rounded-full);
+  padding: 0.2rem 0.6rem;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.header__popular-search-tag:hover {
+  background: var(--btn-bg-color-hover);
+}
+
 .header__mobile-cities-search-box-btn {
   display: flex;
   align-items: center;
@@ -113,11 +231,19 @@
   border-right: 1px solid var(--border-color);
 }
 
+.header.show-search-drop-down .header__mobile-cities-search-box-btn {
+  display: none;
+}
+
 .header__navbar-container {
   background-color: rgb(235, 235, 235);
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+.header.show-search-drop-down .header__navbar-container {
+  display: none;
 }
 
 [data-theme="dark"] .header__navbar-container {
@@ -222,6 +348,29 @@
     display: none;
   }
 
+  .header__global-search-box-drop-down {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    max-height: 470px;
+    overflow-y: auto;
+    top: calc(100% - 0.5rem);
+  }
+
+  .header__global-search-box-drop-down,
+  .header.show-search-drop-down
+    .header__global-search-box-and-mobile-cities-search-box-content {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .header__user-favorite-searches {
+    font-size: var(--font-size-base);
+  }
+
+  .header__popular-searches {
+    display: block;
+  }
+
   .header__content-wrapper,
   .header__navbar-container {
     position: static;
@@ -235,6 +384,7 @@
 
   .header__navbar-container {
     margin-right: 1rem;
+    display: block !important;
   }
 
   .header__navbar {

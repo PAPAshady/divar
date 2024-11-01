@@ -17,9 +17,8 @@
   <body>
     <!--------------- HEADER START --------------->
 
+    <!-- add '.show-search-drop-down' class to show global search box drop down -->
     <header class="header">
-      <!--------------- HEADER TEMPLATE START --------------->
-
       <div class="header__container">
         <div class="header__content-wrapper">
           <div class="header__content container">
@@ -41,7 +40,6 @@
               <i class="fa fa-chevron-down"></i>
             </button>
 
-            <!-- add 'show' class to show close btn of mobile global search box -->
             <button
               class="header__close-mobile-global-search-box-btn"
               id="closeMobileGlobalSearchBox"
@@ -70,6 +68,142 @@
                     <span id="openCitiesSearchBoxBtnText">اصفهان</span>
                     <i class="far fa-location-dot"></i>
                   </button>
+                </div>
+              </div>
+
+              <div class="header__global-search-box-drop-down">
+                <!-- added 'show' class to show '.header__global-search-results-wrapper' and hide 'header__user-and-popular-search-tags-container' -->
+                <div class="header__global-search-results-wrapper">
+                  <a
+                    href="Javascript:void(0)"
+                    class="header__current-searched-value-link"
+                  >
+                    <i
+                      class="fa fa-search header__current-searched-value-link-icon"
+                    ></i>
+                    جستوجوی "<span id="currentSearchValue">خودرو</span>"
+                  </a>
+
+                  <div class="header__search-results" id="searchResultsWrapper">
+                    <a
+                      href="Javascript:void(0)"
+                      class="header__search-result"
+                      class="header__search-result"
+                    >
+                      <div class="header__search-result-title-and-posts">
+                        <span class="header__search-result-title">آیفون</span>
+                        <span class="header__search-result-posts"
+                          >2 هزار آگهی</span
+                        >
+                      </div>
+                      <p>در مصالح و تجهیزات ساختمان</p>
+                    </a>
+
+                    <a href="Javascript:void(0)" class="header__search-result">
+                      <div class="header__search-result-title-and-posts">
+                        <span class="header__search-result-title">آیفون</span>
+                        <span class="header__search-result-posts"
+                          >2 هزار آگهی</span
+                        >
+                      </div>
+                      <p>در مصالح و تجهیزات ساختمان</p>
+                    </a>
+
+                    <a href="Javascript:void(0)" class="header__search-result">
+                      <div class="header__search-result-title-and-posts">
+                        <span class="header__search-result-title">آیفون</span>
+                        <span class="header__search-result-posts"
+                          >2 هزار آگهی</span
+                        >
+                      </div>
+                      <p>در مصالح و تجهیزات ساختمان</p>
+                    </a>
+
+                    <a href="Javascript:void(0)" class="header__search-result">
+                      <div class="header__search-result-title-and-posts">
+                        <span class="header__search-result-title">آیفون</span>
+                        <span class="header__search-result-posts"
+                          >2 هزار آگهی</span
+                        >
+                      </div>
+                      <p>در مصالح و تجهیزات ساختمان</p>
+                    </a>
+
+                    <a href="Javascript:void(0)" class="header__search-result">
+                      <div class="header__search-result-title-and-posts">
+                        <span class="header__search-result-title">آیفون</span>
+                        <span class="header__search-result-posts"
+                          >2 هزار آگهی</span
+                        >
+                      </div>
+                      <p>در مصالح و تجهیزات ساختمان</p>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="header__user-and-popular-search-tags-container">
+                  <span class="header__user-favorite-searches"
+                    >موردی برای نمایش وجود ندارد.</span
+                  >
+
+                  <div class="header__popular-searches">
+                    <p class="header__popular-searches-title">
+                      بیشترین جستوجوهای دیوار
+                    </p>
+
+                    <div class="header__popular-searches-tags-wrapper">
+                      <a
+                        class="header__popular-search-tag"
+                        href="Javascript:void(0)"
+                        >خودروی سواری</a
+                      >
+                      <a
+                        class="header__popular-search-tag"
+                        href="Javascript:void(0)"
+                        >فروش آپارتمان</a
+                      >
+                      <a
+                        class="header__popular-search-tag"
+                        href="Javascript:void(0)"
+                        >اجاره آپارتمان</a
+                      >
+                      <a
+                        class="header__popular-search-tag"
+                        href="Javascript:void(0)"
+                        >موبایل</a
+                      >
+                      <a
+                        class="header__popular-search-tag"
+                        href="Javascript:void(0)"
+                        >صندلی و نیمکت</a
+                      >
+                      <a
+                        class="header__popular-search-tag"
+                        href="Javascript:void(0)"
+                        >حیوانات</a
+                      >
+                      <a
+                        class="header__popular-search-tag"
+                        href="Javascript:void(0)"
+                        >وسایل شخصی</a
+                      >
+                      <a
+                        class="header__popular-search-tag"
+                        href="Javascript:void(0)"
+                        >خدمات</a
+                      >
+                      <a
+                        class="header__popular-search-tag"
+                        href="Javascript:void(0)"
+                        >استخدام</a
+                      >
+                      <a
+                        class="header__popular-search-tag"
+                        href="Javascript:void(0)"
+                        >تلویزیون</a
+                      >
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -130,8 +264,6 @@
           </nav>
         </div>
       </div>
-
-      <!--------------- HEADER TEMPLATE END --------------->
     </header>
 
     <!--------------- HEADER END --------------->
