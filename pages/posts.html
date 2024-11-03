@@ -30,15 +30,58 @@
               />
             </a>
 
-            <button class="header__btn" id="openCitiesSearchBoxBtn">
-              <i class="far fa-location-dot"></i>
-              <span id="openCitiesSearchBoxBtnText">اصفهان</span>
-            </button>
+            <div class="header__btn-container">
+              <button class="header__btn" id="openCitiesSearchBoxBtn">
+                <i class="far fa-location-dot"></i>
+                <span id="openCitiesSearchBoxBtnText">اصفهان</span>
+              </button>
+            </div>
 
-            <button class="header__btn">
-              <span>دسته ها</span>
-              <i class="fa fa-chevron-down"></i>
-            </button>
+            <div class="header__btn-container">
+              <button class="header__btn" id="openCategoriesListBtn">
+                <span>دسته ها</span>
+                <i class="fa fa-chevron-down"></i>
+              </button>
+              <div class="header-btn__content">
+
+                <div class="header__categories-list-container">
+                  <div class="header__categories-list-content">
+                    <div class="header__main-categories-list">
+                      <button
+                        class="header__main-categories-list-show-all-posts-btn"
+                        id="closeCategoriesListBtn"
+                      >
+                        <i class="fa fa-arrow-right"></i>
+                        همه آگهی ها
+                      </button>
+
+                      <ul
+                        class="header__main-categories-wrapper"
+                        id="catagoriesWrapper"
+                      >
+                        <li class="header__main-category-item">
+                          <button class="header__main-category-item-btn">
+                            <div class="header__main-category-item-right">
+                              <i
+                                class="fa-regular fa-city header__main-category-item-title-icon"
+                              ></i>
+                              <span class="header__main-category-item-title"
+                                >املاک</span
+                              >
+                            </div>
+                            <i
+                              class="fa fa-chevron-left header__main-category-item-left-arrow-icon"
+                            ></i>
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="header__sub-categories-list"></div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
 
             <button
               class="header__close-mobile-global-search-box-btn"
