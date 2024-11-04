@@ -1,4 +1,5 @@
-@import "../components/cities-search-box.css";
+@import "./cities-search-box.css";
+@import './mobile-category.css';
 
 .header {
   z-index: 5;

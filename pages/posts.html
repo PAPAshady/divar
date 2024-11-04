@@ -38,7 +38,7 @@
             </div>
 
             <!-- add 'show' to '.header__btn_container' element to show the categories menu -->
-            <div class="header__btn-container  show" id="categoriesMenu">
+            <div class="header__btn-container" id="categoriesMenu">
               <button class="header__btn" id="openCategoriesListBtn">
                 <span>دسته ها</span>
                 <i class="fa fa-chevron-down header__btn-icon"></i>
@@ -591,6 +591,292 @@
     </header>
 
     <!--------------- HEADER END --------------->
+
+    <!--------------- MOBILE CATEGORY MENU START --------------->
+
+    <!-- add 'show' class to '.mobile-category' element to show to mobile category menu -->
+    <div class="mobile-category" id="mobileCategoryMenu">
+      <div class="mobile-category__content">
+        <div class="mobile-category__header">
+          <div class="mobile-category__header-title-and-back-btn">
+            <button
+              class="mobile-category__back-btn"
+              id="mobileCategoryListBackBtn"
+            >
+              <i class="fa fa-arrow-right"></i>
+            </button>
+            <span
+              class="mobile-category__header-title"
+              id="mobileCategoryListHeaderTitle"
+              >انتخاب دسته بندی</span
+            >
+          </div>
+
+          <button
+            class="mobile-category__header-close-btn"
+            id="mobileCategoryListCloseBtn"
+          >
+            <i class="fa fa-xmark"></i>
+          </button>
+        </div>
+
+        <!-- add 'show-toggle-btn' class to '.mobile-category__body' element to make '.mobile-category__toggle-btn-wrapper' element visible -->
+        <div class="mobile-category__body show-toggle-btn">
+          <label class="mobile-category__toggle-btn-wrapper">
+            <span class="mobile-category__toggle-btn-label"
+              >نمایش راهنمای دسته‌بندی</span
+            >
+            <div class="toggle-btn">
+              <input
+                class="toggle-btn__input"
+                type="checkbox"
+                id="showCategoriesInfoCheckBox"
+              />
+              <span class="toggle-btn__input-ui"></span>
+            </div>
+          </label>
+
+          <!-- add 'show-details' class to '.mobile-category__categories-wrapper' element to show the details of the main categories. -->
+          <ul
+            class="mobile-category__categories-wrapper"
+            id="mobileAllCategoriesWrapper"
+          >
+            <li class="mobile-category__category">
+              <a
+                href="Javascript:void(0)"
+                class="mobile-category__category-content"
+              >
+                <div class="mobile-category__category-header">
+                  <div class="mobile-category__category-title-and-icon">
+                    <i class="far fa-city mobile-category__category-icon"></i>
+                    <span class="mobile-category__category-title">املاک</span>
+                  </div>
+                  <i
+                    class="fa fas fa-chevron-left mobile-category__category-left-arrow"
+                  ></i>
+                </div>
+                <p class="mobile-category__category-infos">
+                  فروش مسکونی، اجاره مسکونی، فروش اداری و تجاری، اجاره اداری و
+                  تجاری، اجاره کوتاه مدت
+                </p>
+              </a>
+            </li>
+
+            <li class="mobile-category__category">
+              <a
+                href="Javascript:void(0)"
+                class="mobile-category__category-content"
+              >
+                <div class="mobile-category__category-header">
+                  <div class="mobile-category__category-title-and-icon">
+                    <i class="far fa-city mobile-category__category-icon"></i>
+                    <span class="mobile-category__category-title">املاک</span>
+                  </div>
+                  <i
+                    class="fa fas fa-chevron-left mobile-category__category-left-arrow"
+                  ></i>
+                </div>
+                <p class="mobile-category__category-infos">
+                  فروش مسکونی، اجاره مسکونی، فروش اداری و تجاری، اجاره اداری و
+                  تجاری، اجاره کوتاه مدت
+                </p>
+              </a>
+            </li>
+
+            <li class="mobile-category__category">
+              <a
+                href="Javascript:void(0)"
+                class="mobile-category__category-content"
+              >
+                <div class="mobile-category__category-header">
+                  <div class="mobile-category__category-title-and-icon">
+                    <i class="far fa-city mobile-category__category-icon"></i>
+                    <span class="mobile-category__category-title">املاک</span>
+                  </div>
+                  <i
+                    class="fa fas fa-chevron-left mobile-category__category-left-arrow"
+                  ></i>
+                </div>
+                <p class="mobile-category__category-infos">
+                  فروش مسکونی، اجاره مسکونی، فروش اداری و تجاری، اجاره اداری و
+                  تجاری، اجاره کوتاه مدت
+                </p>
+              </a>
+            </li>
+
+            <li class="mobile-category__category">
+              <a
+                href="Javascript:void(0)"
+                class="mobile-category__category-content"
+              >
+                <div class="mobile-category__category-header">
+                  <div class="mobile-category__category-title-and-icon">
+                    <i class="far fa-city mobile-category__category-icon"></i>
+                    <span class="mobile-category__category-title">املاک</span>
+                  </div>
+                  <i
+                    class="fa fas fa-chevron-left mobile-category__category-left-arrow"
+                  ></i>
+                </div>
+                <p class="mobile-category__category-infos">
+                  فروش مسکونی، اجاره مسکونی، فروش اداری و تجاری، اجاره اداری و
+                  تجاری، اجاره کوتاه مدت
+                </p>
+              </a>
+            </li>
+
+            <li class="mobile-category__category">
+              <a
+                href="Javascript:void(0)"
+                class="mobile-category__category-content"
+              >
+                <div class="mobile-category__category-header">
+                  <div class="mobile-category__category-title-and-icon">
+                    <i class="far fa-city mobile-category__category-icon"></i>
+                    <span class="mobile-category__category-title">املاک</span>
+                  </div>
+                  <i
+                    class="fa fas fa-chevron-left mobile-category__category-left-arrow"
+                  ></i>
+                </div>
+                <p class="mobile-category__category-infos">
+                  فروش مسکونی، اجاره مسکونی، فروش اداری و تجاری، اجاره اداری و
+                  تجاری، اجاره کوتاه مدت
+                </p>
+              </a>
+            </li>
+
+            <li class="mobile-category__category">
+              <a
+                href="Javascript:void(0)"
+                class="mobile-category__category-content"
+              >
+                <div class="mobile-category__category-header">
+                  <div class="mobile-category__category-title-and-icon">
+                    <i class="far fa-city mobile-category__category-icon"></i>
+                    <span class="mobile-category__category-title">املاک</span>
+                  </div>
+                  <i
+                    class="fa fas fa-chevron-left mobile-category__category-left-arrow"
+                  ></i>
+                </div>
+                <p class="mobile-category__category-infos">
+                  فروش مسکونی، اجاره مسکونی، فروش اداری و تجاری، اجاره اداری و
+                  تجاری، اجاره کوتاه مدت
+                </p>
+              </a>
+            </li>
+
+            <li class="mobile-category__category">
+              <a
+                href="Javascript:void(0)"
+                class="mobile-category__category-content"
+              >
+                <div class="mobile-category__category-header">
+                  <div class="mobile-category__category-title-and-icon">
+                    <i class="far fa-city mobile-category__category-icon"></i>
+                    <span class="mobile-category__category-title">املاک</span>
+                  </div>
+                  <i
+                    class="fa fas fa-chevron-left mobile-category__category-left-arrow"
+                  ></i>
+                </div>
+                <p class="mobile-category__category-infos">
+                  فروش مسکونی، اجاره مسکونی، فروش اداری و تجاری، اجاره اداری و
+                  تجاری، اجاره کوتاه مدت
+                </p>
+              </a>
+            </li>
+
+            <li class="mobile-category__category">
+              <a
+                href="Javascript:void(0)"
+                class="mobile-category__category-content"
+              >
+                <div class="mobile-category__category-header">
+                  <div class="mobile-category__category-title-and-icon">
+                    <i class="far fa-city mobile-category__category-icon"></i>
+                    <span class="mobile-category__category-title">املاک</span>
+                  </div>
+                  <i
+                    class="fa fas fa-chevron-left mobile-category__category-left-arrow"
+                  ></i>
+                </div>
+                <p class="mobile-category__category-infos">
+                  فروش مسکونی، اجاره مسکونی، فروش اداری و تجاری، اجاره اداری و
+                  تجاری، اجاره کوتاه مدت
+                </p>
+              </a>
+            </li>
+
+            <li class="mobile-category__category">
+              <a
+                href="Javascript:void(0)"
+                class="mobile-category__category-content"
+              >
+                <div class="mobile-category__category-header">
+                  <div class="mobile-category__category-title-and-icon">
+                    <i class="far fa-city mobile-category__category-icon"></i>
+                    <span class="mobile-category__category-title">املاک</span>
+                  </div>
+                  <i
+                    class="fa fas fa-chevron-left mobile-category__category-left-arrow"
+                  ></i>
+                </div>
+                <p class="mobile-category__category-infos">
+                  فروش مسکونی، اجاره مسکونی، فروش اداری و تجاری، اجاره اداری و
+                  تجاری، اجاره کوتاه مدت
+                </p>
+              </a>
+            </li>
+
+            <li class="mobile-category__category">
+              <a
+                href="Javascript:void(0)"
+                class="mobile-category__category-content"
+              >
+                <div class="mobile-category__category-header">
+                  <div class="mobile-category__category-title-and-icon">
+                    <i class="far fa-city mobile-category__category-icon"></i>
+                    <span class="mobile-category__category-title">املاک</span>
+                  </div>
+                  <i
+                    class="fa fas fa-chevron-left mobile-category__category-left-arrow"
+                  ></i>
+                </div>
+                <p class="mobile-category__category-infos">
+                  فروش مسکونی، اجاره مسکونی، فروش اداری و تجاری، اجاره اداری و
+                  تجاری، اجاره کوتاه مدت
+                </p>
+              </a>
+            </li>
+
+            <li class="mobile-category__category">
+              <a
+                href="Javascript:void(0)"
+                class="mobile-category__category-content"
+              >
+                <div class="mobile-category__category-header">
+                  <div class="mobile-category__category-title-and-icon">
+                    <i class="far fa-city mobile-category__category-icon"></i>
+                    <span class="mobile-category__category-title">املاک</span>
+                  </div>
+                  <i
+                    class="fa fas fa-chevron-left mobile-category__category-left-arrow"
+                  ></i>
+                </div>
+                <p class="mobile-category__category-infos">
+                  فروش مسکونی، اجاره مسکونی، فروش اداری و تجاری، اجاره اداری و
+                  تجاری، اجاره کوتاه مدت
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--------------- MOBILE CATEGORY MENU END --------------->
 
     <!--------------- CITIES SEARCH BOX START --------------->
 

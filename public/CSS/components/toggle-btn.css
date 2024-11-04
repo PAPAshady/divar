@@ -1,0 +1,44 @@
+.toggle-btn {
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-btn__input {
+  position: absolute;
+  visibility: hidden;
+}
+
+.toggle-btn__input-ui {
+  display: inline-block;
+  width: 45px;
+  height: 24px;
+  border-radius: var(--rounded-full);
+  background-color: var(--neutral-400);
+  position: relative;
+  transition: background-color 200ms;
+}
+
+[data-theme="dark"] .toggle-btn__input-ui {
+  background-color: var(--neutral-600);
+}
+
+.toggle-btn__input-ui::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: var(--bg-color);
+  border-radius: var(--rounded-full);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 3px;
+  transition: right 200ms;
+}
+
+.toggle-btn__input:checked ~ .toggle-btn__input-ui::before {
+  right: 22px;
+}
+
+.toggle-btn__input:checked ~ .toggle-btn__input-ui {
+  background: var(--primary-color);
+}
