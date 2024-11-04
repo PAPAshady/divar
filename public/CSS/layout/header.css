@@ -153,6 +153,9 @@
 
 .header__sub-categories-list {
   flex: 3.5;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: none;
 }
 
 .header__sub-categories-list-content {
