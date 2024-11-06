@@ -1,5 +1,5 @@
 @import "./cities-search-box.css";
-@import './mobile-category.css';
+@import "./mobile-category.css";
 
 .header {
   z-index: 5;
@@ -397,6 +397,53 @@
 
 .header__support-btn {
   display: none;
+  position: relative;
+  overflow: visible !important;
+}
+
+.header__support-btn-drop-down-wrapper {
+  position: absolute;
+  padding-top: 0.2rem;
+  right: 0;
+  top: 70%;
+  z-index: -1;
+  opacity: 0;
+  transition: all 200ms;
+}
+
+.header__support-btn-drop-down-wrapper.show {
+  top: 100%;
+  z-index: 10;
+  opacity: 1;
+}
+
+.header__support-btn-drop-down {
+  box-shadow: var(--shadow-lg);
+  background-color: var(--bg-color);
+  border-radius: var(--rounded-sm);
+  font-size: var(--font-size-xs);
+  white-space: nowrap;
+}
+
+.header__support-btn-drop-down-list-item:not(:last-child) {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header__support-btn-drop-down-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.header__support-btn-drop-down-link:hover {
+  color: var(--text-color-secondary);
+  background-color: var(--border-color);
+}
+
+.header__support-btn-drop-down-link-icon {
+  font-size: var(--font-size-sm);
 }
 
 .header__navbar-item-link {
