@@ -1,3 +1,73 @@
-@import '../shared.css';
-@import '../layout/header.css';
-@import '../components/loader.css';
+@import "../shared.css";
+@import "../layout/header.css";
+@import "../components/loader.css";
+
+.sidebar-and-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/*************** SIDEBAR START ***************/
+
+.sidebar__mobile-categories-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.sidebar__category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: var(--font-size-xs);
+}
+
+.sidebar__category-img {
+  width: 50px;
+}
+
+.sidebar__category-img--dark {
+  display: none;
+}
+
+[data-theme="dark"] .sidebar__category-img--dark {
+  display: inline-block;
+}
+
+[data-theme="dark"] .sidebar__category-img--light {
+  display: none;
+}
+
+.sidebar__category-title {
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (min-width: 480px) {
+  .sidebar__mobile-categories-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 640px) {
+  .sidebar__mobile-categories-wrapper {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .sidebar__mobile-categories-wrapper {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar__mobile-categories-wrapper {
+    display: none;
+  }
+}
+
+/*************** SIDEBAR END ***************/

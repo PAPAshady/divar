@@ -62,3 +62,7 @@ select {
   max-width: 1440px;
   margin: 0 auto;
 }
+
+.page-content{
+  padding-top: 6rem;
+}
