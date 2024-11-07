@@ -666,7 +666,7 @@
 
   .header__navbar-item-wrapper.active .header__navbar-item-link {
     color: var(--text-color-secondary);
-    background-color: var(--neutral-300);
+    background-color: var(--neutral-100);
   }
 
   [data-theme="dark"]
