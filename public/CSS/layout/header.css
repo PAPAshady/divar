@@ -392,12 +392,76 @@
 }
 
 .header__navbar-item-wrapper {
+  position: relative;
   flex: 1;
+}
+
+.header__account-btn {
+  overflow: visible !important;
+}
+
+.header__account-btn-drop-down-container {
+  position: absolute;
+  padding-top: 0.2rem;
+  top: 70%;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 200ms;
+}
+
+.header__account-btn.active .header__account-btn-drop-down-container {
+  top: 100%;
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+}
+
+.header__acount-btn-drop-down {
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--rounded-sm);
+  background-color: var(--bg-color);
+  white-space: nowrap;
+}
+
+.header__account-btn-drop-down-item:not(:last-child),
+.header__account-btn-drop-down-user-profile-link {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header__account-btn-drop-down-user-profile-link,
+.header__account-btn-drop-down-link {
+  display: block;
+  padding: .9rem;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.header__account-btn-drop-down-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header__account-btn-drop-down-user-profile-link:hover,
+.header__account-btn-drop-down-link:hover {
+  background-color: var(--border-color);
+  color: var(--text-color-secondary);
+}
+
+.header__account-btn-drop-down-user-profile-link-icon-and-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font: inherit;
+}
+
+.account-btn-drop-down-user-profile-link-user-phone {
+  padding: 0.2rem 1rem 0 0;
 }
 
 .header__support-btn {
   display: none;
-  position: relative;
   overflow: visible !important;
 }
 
@@ -411,7 +475,7 @@
   transition: all 200ms;
 }
 
-.header__support-btn-drop-down-wrapper.show {
+.header__support-btn.active .header__support-btn-drop-down-wrapper {
   top: 100%;
   z-index: 10;
   opacity: 1;
@@ -460,12 +524,14 @@
   color: var(--primary-color);
 }
 
-.header__navbar-item-link:hover {
+.header__navbar-item-link:hover,
+.header__navbar-item-link.active {
   color: var(--text-color-secondary);
   background-color: var(--neutral-300);
 }
 
-[data-theme="dark"] .header__navbar-item-link:hover {
+[data-theme="dark"] .header__navbar-item-link:hover,
+[data-theme="dark"] .header__navbar-item-link.active {
   background-color: #303030;
 }
 

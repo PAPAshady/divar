@@ -549,14 +549,20 @@
               </a>
             </div>
 
-            <div class="header__navbar-item-wrapper header__categories-btn">
+            <div
+              class="header__navbar-item-wrapper header__categories-btn"
+              id="openCategoriesListBtn"
+            >
               <a href="Javascript:void(0)" class="header__navbar-item-link">
                 <i class="fa fa-list header__navbar-item-link-icon"></i>
                 <span class="header__navbar-item-link-text">دسته ها</span>
               </a>
             </div>
 
-            <div class="header__navbar-item-wrapper header__new-post-btn">
+            <div
+              class="header__navbar-item-wrapper header__new-post-btn"
+              id="AddNewPostBtn"
+            >
               <a href="Javascript:void(0)" class="header__navbar-item-link">
                 <i
                   class="fa-solid fa-circle-plus header__navbar-item-link-icon"
@@ -565,27 +571,162 @@
               </a>
             </div>
 
-            <div class="header__navbar-item-wrapper header__dark-mode-btn">
+            <div
+              class="header__navbar-item-wrapper header__dark-mode-btn"
+              id="toggleDarkModeBtn"
+            >
               <a href="Javascript:void(0)" class="header__navbar-item-link">
                 <i class="fa fa-moon header__navbar-item-link-icon"></i>
                 <span class="header__navbar-item-link-text">حالت تاریک</span>
               </a>
             </div>
 
+            <!-- add 'active' class to '.header__account-btn' element to show user profile drop down menu. -->
             <div class="header__navbar-item-wrapper header__account-btn">
-              <a href="Javascript:void(0)" class="header__navbar-item-link">
-                <i class="fa fa-user header__navbar-item-link-icon"></i>
+              <a
+                href="Javascript:void(0)"
+                class="header__navbar-item-link"
+                id="openHeaderProfileMenuDropDown"
+              >
+                <i class="fa-regular fa-user header__navbar-item-link-icon"></i>
                 <span class="header__navbar-item-link-text">دیوار من</span>
               </a>
+
+              <div
+                class="header__account-btn-drop-down-container show"
+                id="headerProfileMenuDropDown"
+              >
+                <ul class="header__acount-btn-drop-down">
+                  <li class="header__account-btn-drop-down-user-profile-item">
+                    <a
+                      href="Javascript:void(0)"
+                      class="header__account-btn-drop-down-user-profile-link"
+                    >
+                      <span
+                        class="header__account-btn-drop-down-user-profile-link-icon-and-title"
+                      >
+                        <i class="fa-regular fa-user"></i>
+                        <span>کاربر دیوار</span>
+                      </span>
+                      <p
+                        class="account-btn-drop-down-user-profile-link-user-phone"
+                      >
+                        تلفن <span id="userPhone">09331844549</span>
+                      </p>
+                    </a>
+                  </li>
+
+                  <li class="header__account-btn-drop-down-item">
+                    <a
+                      href="Javascript:void(0)"
+                      class="header__account-btn-drop-down-link"
+                    >
+                      <i class="fa-regular fa-badge-check"></i>
+                      تایید هویت
+                    </a>
+                  </li>
+
+                  <li class="header__account-btn-drop-down-item">
+                    <a
+                      href="Javascript:void(0)"
+                      class="header__account-btn-drop-down-link"
+                    >
+                      <i class="fa-regular fa-scroll"></i>
+                      آگهی های من
+                    </a>
+                  </li>
+
+                  <li class="header__account-btn-drop-down-item">
+                    <a
+                      href="Javascript:void(0)"
+                      class="header__account-btn-drop-down-link"
+                    >
+                      <i class="fa-regular fa-credit-card"></i>
+                      پرداخت های من
+                    </a>
+                  </li>
+
+                  <li class="header__account-btn-drop-down-item">
+                    <a
+                      href="Javascript:void(0)"
+                      class="header__account-btn-drop-down-link"
+                    >
+                      <i class="fa-regular fa-bookmark"></i>
+                      نشان ها
+                    </a>
+                  </li>
+
+                  <li class="header__account-btn-drop-down-item">
+                    <a
+                      href="Javascript:void(0)"
+                      class="header__account-btn-drop-down-link"
+                    >
+                      <i class="fa-regular fa-notes"></i>
+                      یادداشت ها
+                    </a>
+                  </li>
+
+                  <li class="header__account-btn-drop-down-item">
+                    <a
+                      href="Javascript:void(0)"
+                      class="header__account-btn-drop-down-link"
+                    >
+                      <i class="fa-regular fa-clock-rotate-left"></i>
+                      بازدید های اخیر
+                    </a>
+                  </li>
+
+                  <li class="header__account-btn-drop-down-item">
+                    <a
+                      href="Javascript:void(0)"
+                      class="header__account-btn-drop-down-link"
+                    >
+                      <i class="fa-regular fa-shield-check"></i>
+                      مقابله با مزاحمت و کلاهبرداری
+                    </a>
+                  </li>
+
+                  <li class="header__account-btn-drop-down-item">
+                    <a
+                      href="Javascript:void(0)"
+                      class="header__account-btn-drop-down-link"
+                    >
+                      <i class="fa-regular fa-shop"></i>
+                      دیوار برای کسب و کار ها
+                    </a>
+                  </li>
+
+                  <li class="header__account-btn-drop-down-item">
+                    <a
+                      href="Javascript:void(0)"
+                      class="header__account-btn-drop-down-link"
+                    >
+                      <i class="fa-regular fa-paintbrush"></i>
+                      تنظیمات ظاهر دیوار
+                    </a>
+                  </li>
+
+                  <li class="header__account-btn-drop-down-item">
+                    <a
+                      href="Javascript:void(0)"
+                      class="header__account-btn-drop-down-link"
+                      id="headerLogOutBtn"
+                    >
+                      <i class="fa fa-arrow-right-from-bracket"></i>
+                      خروج
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
 
+            <!-- add 'active' class to '.header__support-btn' element to show drop down menu. -->
             <div class="header__navbar-item-wrapper header__support-btn">
               <a href="Javascript:void(0)" class="header__navbar-item-link">
                 <i class="fa fa-headset header__navbar-item-link-icon"></i>
                 <span class="header__navbar-item-link-text">پشتیبانی</span>
               </a>
 
-              <!-- add 'show' class to '.header__support-btn-drop-down-wrapper' element to show drop down -->
               <div
                 class="header__support-btn-drop-down-wrapper"
                 id="headerSupportDropDown"
