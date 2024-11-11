@@ -18,6 +18,11 @@
   transition: background-color 200ms;
 }
 
+.toggle-btn__input-ui--small {
+  width: 35px;
+  height: 20px;
+}
+
 [data-theme="dark"] .toggle-btn__input-ui {
   background-color: var(--neutral-600);
 }
@@ -35,8 +40,18 @@
   transition: right 200ms;
 }
 
+.toggle-btn__input-ui--small::before {
+  width: 16px;
+  height: 16px;
+  right: 2px;
+}
+
 .toggle-btn__input:checked ~ .toggle-btn__input-ui::before {
   right: 22px;
+}
+
+.toggle-btn__input:checked ~ .toggle-btn__input-ui--small::before {
+  right: 17px;
 }
 
 .toggle-btn__input:checked ~ .toggle-btn__input-ui {
