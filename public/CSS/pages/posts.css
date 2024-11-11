@@ -26,6 +26,8 @@
   overflow-y: auto;
   display: none;
   padding-bottom: 5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 @media (min-width: 1024px) {
