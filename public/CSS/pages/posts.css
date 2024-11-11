@@ -25,9 +25,9 @@
   height: calc(100dvh - 70px);
   overflow-y: auto;
   display: none;
-  padding-bottom: 5rem;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  padding-bottom: 1rem;
+  height: 83%;
+  scrollbar-width: thin;
 }
 
 .sidebar__content {
@@ -147,6 +147,7 @@
   width: 100%;
   padding: 0.4rem 0.75rem;
   transition: border-color 100ms;
+  margin-bottom: 1rem;
 }
 
 .sidebar__open-neighborhood-search-box-btn:hover {
@@ -157,6 +158,10 @@
 
 /* START SIDEBAR PRICE FILTERS */
 
+.sidebar__filters {
+  border: none !important;
+}
+
 .sidebar__price-filter-select-box {
   display: flex;
   align-items: center;
@@ -166,6 +171,10 @@
 
 .sidebar__price-filter-select-box-title {
   font-weight: 600;
+}
+
+.sidebar__price-filter-select-boxes-wrapper {
+  padding-bottom: 1rem;
 }
 
 .sidebar__price-filter-select-boxes-seperators-wrapper {
@@ -206,6 +215,53 @@
 }
 
 /* END SIDEBAR POST STATUS FILTERS */
+
+/* START SIDEBAR FOOTER */
+
+.sidebar__footer-links-wrapper {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  margin-bottom: 1rem;
+}
+
+.sidebar__footer-link {
+  font-weight: 600;
+  padding: 0.5rem;
+}
+
+.sidebar__footer-link:hover {
+  color: var(--text-color-secondary);
+}
+
+.sidebar__socials-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: var(--font-size-lg);
+  margin-bottom: 2rem;
+}
+
+.sidebar__social-link:hover {
+  color: var(--text-color-secondary);
+}
+
+.sidebar__logos-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.sidebar__logo-img {
+  width: 70px;
+  height: 70px;
+}
+
+/* END SIDEBAR FOOTER */
 
 /* START SIDEBAR MEDIA QUERIES */
 
