@@ -1,0 +1,67 @@
+.select-box{
+    width: 100%;
+    position: relative;
+}
+
+.select-box__open-btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    border-radius: var(--rounded-sm);
+    padding: .4rem .5rem;
+    transition: border-color 300ms;
+}
+
+.select-box__open-btn:hover{
+    border-color: var(--text-color-secondary);
+}
+
+.select-box__current-value-wrapper{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    position: absolute;
+    right: 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms;
+}
+
+.select-box__current-value-wrapper.show{
+    right: 10px;
+    opacity: 1;
+    visibility: visible;
+    white-space: nowrap;
+    gap: .5rem;
+}
+
+.select-box__remove-selected-value-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: var(--rounded-full);
+    transition: background-color 200ms;
+}
+
+.select-box__remove-selected-value-btn:hover{
+    background-color: var(--border-color);
+}
+
+.select-box__current-value{
+    color: var(--text-color-secondary);
+}
+
+.select-box__open-btn-placeholder{
+    transition: all 200ms;
+    display: block;
+}
+
+.select-box__current-value-wrapper.show ~ .select-box__open-btn-placeholder{
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-10px);
+}
