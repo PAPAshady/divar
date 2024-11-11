@@ -30,12 +30,6 @@
   -ms-overflow-style: none;
 }
 
-@media (min-width: 1024px) {
-  .sidebar {
-    display: block;
-  }
-}
-
 .sidebar__content {
   padding: 0 0.5rem;
 }
@@ -212,6 +206,16 @@
 }
 
 /* END SIDEBAR POST STATUS FILTERS */
+
+/* START SIDEBAR MEDIA QUERIES */
+
+@media (min-width: 1024px) {
+  .sidebar {
+    display: block;
+  }
+}
+
+/* END SIDEBAR MEDIA QUERIES */
 
 /*************** SIDEBAR END ***************/
 
