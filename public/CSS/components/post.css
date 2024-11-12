@@ -1,0 +1,153 @@
+.posts-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.post {
+  border: 1px solid transparent;
+  border-radius: var(--rounded-sm);
+  border-bottom-color: var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+}
+
+.post__infos {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.post__title {
+  color: var(--text-color-secondary);
+  font-weight: 700;
+  font-size: var(--font-size-sm);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  max-width: 160px;
+  margin-bottom: 0.3rem;
+}
+
+.posts__prices-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: end;
+  margin-bottom: 0.2rem;
+}
+
+.post__main-price {
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+}
+
+.post__main-price-number {
+  color: var(--text-color-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.post__salary-price {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.post__prepaid-price-wrapper,
+.post__rent-price-wrapper {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.post__prepaid-price-number,
+.post__rent-price-number {
+  font-size: var(--font-size-sm);
+  color: var(--text-color-secondary);
+}
+
+.post__additional-price-description {
+  color: var(--text-color-secondary);
+  font-weight: 600;
+}
+
+.post__location-and-time {
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-xs);
+  gap: 1rem;
+}
+
+.post__location-wrapper,
+.post__img-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+
+.post__time-text,
+.post__location-text {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.post__location-text {
+  max-width: 70px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post__img-wrapper {
+  width: 128px;
+  height: 128px;
+  min-width: 128px;
+  min-height: 128px;
+  overflow: hidden;
+  border-radius: var(--rounded-sm);
+}
+
+.post__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 480px) {
+  .post__title {
+    max-width: 310px;
+  }
+
+  .post__location-text {
+    max-width: 150px;
+  }
+}
+
+@media (min-width: 768px) {
+  .posts-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+  }
+
+  .post {
+    border-color: var(--border-color);
+    padding: 0.75rem 1rem;
+  }
+
+  .post__location-text {
+    max-width: 75px;
+  }
+}
+
+@media (min-width: 1370px) {
+  .posts-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: none;
+  }
+
+  .post__location-text {
+    max-width: 65px;
+  }
+}

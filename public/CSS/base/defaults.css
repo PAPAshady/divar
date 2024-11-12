@@ -64,5 +64,5 @@ select {
 }
 
 .page-content{
-  padding-top: 6rem;
+  padding: 6rem .5rem 60px ;
 }

@@ -3,7 +3,8 @@
 @import "../components/loader.css";
 @import "../components/select-box.css";
 @import "../components/toggle-btn.css";
-@import '../layout/neighborhoods-search-box.css';
+@import "../layout/neighborhoods-search-box.css";
+@import "../components/post.css";
 
 .sidebar-and-main {
   display: flex;
@@ -14,7 +15,6 @@
 @media (min-width: 1024px) {
   .sidebar-and-main {
     flex-direction: row;
-    gap: 0;
   }
 }
 
@@ -279,13 +279,6 @@
 
 /*************** MAIN START ***************/
 
-@media (min-width: 1024px) {
-  .main {
-    flex-grow: 1;
-    margin-right: 290px;
-  }
-}
-
 .main__mobile-categories-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -322,6 +315,12 @@
   text-align: center;
 }
 
+.main__posts-location-description {
+  margin: 2rem 0;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
 @media (min-width: 480px) {
   .main__mobile-categories-wrapper {
     grid-template-columns: repeat(4, 1fr);
@@ -341,8 +340,18 @@
 }
 
 @media (min-width: 1024px) {
+  .main {
+    flex-grow: 1;
+    margin-right: 300px;
+  }
+
   .main__mobile-categories-wrapper {
     display: none;
+  }
+
+  .main__posts-location-description {
+    margin-top: 0;
+    text-align: end;
   }
 }
 
