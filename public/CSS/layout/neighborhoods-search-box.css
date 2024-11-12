@@ -1,0 +1,173 @@
+@import '../components/input.css';
+@import '../components/checkbox.css';
+@import '../components/button.css';
+
+.neighborhoods{
+    position: fixed;
+    width: 100dvw;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+    top: 0;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 200ms;
+}
+
+.neighborhoods.show{
+    visibility: visible;
+    z-index: 10;
+    opacity: 1;
+}
+
+.neighborhoods__content{
+    background-color: var(--bg-color);
+    border-radius: var(--rounded-sm);
+    box-shadow: var(--shadow-lg);
+    width: 480px;
+    height: 90%;
+    max-height: 650px;
+    display: flex;
+    flex-direction: column;
+}
+
+.neighborhoods__header{
+    padding: 2rem 2rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.neighborhoods__header-title-and-action-btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.1rem;
+}
+
+.neighborhoods__header-title{
+    color: var(--text-color-secondary);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.neighborhoods__header-action-btn{
+    color: var(--primary-color);
+    border-radius: var(--rounded-full);
+    padding: .2rem .75rem .1rem;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    display: none;
+}
+
+.neighborhoods__header-action-btn.show{
+    display: block;
+}
+
+.neighborhoods__header-action-btn:hover{
+    background-color: var(--primary-color-hover);
+}
+
+/* overwriting input icon styles */
+.neighborhoods__header-input-icon{
+    font-size: var(--font-size-base);
+}
+
+.neighborhoods__header-description-and-selected-neighborhoods{
+    margin-bottom: 1rem;
+}
+
+.neighborhoods__selected-neighborhoods-wrapper{
+    display: none;
+    align-items: center;
+    gap: .5rem;
+    overflow-x: auto;
+    padding-bottom: .75rem;
+    scrollbar-width: thin;
+}
+
+.neighborhoods__selected-neighborhoods-wrapper.show{
+    display: flex;
+}
+
+.neighborhoods__selected-neighborhood{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: var(--rounded-full);
+    border: 1px solid var(--primary-color);
+    background-color: var(--primary-color-hover);
+    color: var(--primary-color);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    height: 32px;
+    padding: 0 .75rem 0 0;
+}
+
+.neighborhoods__remove-selected-neighborhood-btn{
+    padding: .3rem .5rem .1rem .6rem;
+}
+
+.neighborhoods__header-description{
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+.neighborhoods__selected-neighborhoods-wrapper.show ~ .neighborhoods__header-description {
+    display: none;
+}
+
+.neighborhoods__body{
+    flex-grow: 1;
+    overflow-y: auto;
+    height: 100%;
+    scrollbar-width: thin;
+}
+
+.neighborhoods__neighborhoods-wrapper{
+    padding: .5rem 2rem;
+}
+
+.neighborhoods__neighborhood{
+    padding: .5rem 0 .3rem;
+}
+
+.neighborhoods__neighborhood-content{
+    cursor: pointer;
+}
+
+.neighborhoods__neighborhood:not(:last-child){
+    border-bottom: 1px solid var(--border-color);
+}
+
+.neighborhoods__neighborhood-name-and-checkbox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.neighborhoods__neighborhood-name{
+    color: var(--text-color-secondary);
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.neighborhoods__neighborhood-sub-locations{
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    padding-top: .5rem;
+}
+
+.neighborhoods__footer{
+    padding: .75rem 1rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.neighborhoods__footer .btn{
+    flex-grow: 1;
+}

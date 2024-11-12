@@ -7,6 +7,10 @@
     transition: all 200ms;
 }
 
+.btn:hover{
+    background-color: var(--btn-bg-color-hover);
+}
+
 .btn:disabled{
     cursor: not-allowed;
     background-color: var(--neutral-200);
@@ -21,6 +25,13 @@
 
 .btn:disabled:hover{
     filter: brightness(1);
+    border-color: var(--neutral-200);
+    background-color: var(--neutral-200);
+}
+
+[data-theme="dark"] .btn:disabled:hover{
+    border-color: var(--neutral-700);
+    background-color: var(--neutral-700);
 }
 
 .btn--primary{
@@ -31,4 +42,5 @@
 
 .btn--primary:hover{
     filter: brightness(1.15);
+    background-color: var(--primary-color)
 }

@@ -1,3 +1,5 @@
+@import '../components/checkbox.css';
+
 .cities-search-box {
   width: 100dvw;
   height: 100dvh;
@@ -6,6 +8,7 @@
   justify-content: center;
   align-items: center;
   position: fixed;
+  top: 0;
   z-index: -1;
   opacity: 0;
   visibility: hidden;
@@ -173,49 +176,6 @@
 
 .cities-search-box__city:last-child .cities-search-box__city-content {
   border: none;
-}
-
-.cities-search-box__check-box-wrapper {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.cities-search-box__city-check-box-input {
-  position: absolute;
-  visibility: hidden;
-}
-
-.cities-search-box__city-check-box-ui {
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--neutral-400);
-  display: inline-block;
-  background: var(--bg-color);
-  border-radius: var(--rounded-sm);
-  position: relative;
-}
-
-[data-theme="dark"] .cities-search-box__city-check-box-ui {
-  border: 1px solid var(--neutral-600);
-}
-
-.cities-search-box__city-check-box-ui::before {
-  content: "";
-  width: 6px;
-  height: 12px;
-  border-left: 2px solid var(--bg-color);
-  border-top: 2px solid var(--bg-color);
-  position: absolute;
-  left: 50%;
-  top: 45%;
-  transform: translate(-50%, -50%) rotate(-140deg);
-}
-
-.cities-search-box__city-check-box-input:checked
-  ~ .cities-search-box__city-check-box-ui {
-  background-color: var(--primary-color);
-  border-color: var(--primary-color);
 }
 
 .cities-search-box__footer {

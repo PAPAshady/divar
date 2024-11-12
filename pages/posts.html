@@ -1685,13 +1685,13 @@
             <a href="#" class="cities-search-box__city">
               <label class="cities-search-box__city-content">
                 همه شهر های آذربایجان
-                <div class="cities-search-box__check-box-wrapper">
+                <div class="check-box">
                   <input
-                    class="cities-search-box__city-check-box-input"
+                    class="check-box__input"
                     type="checkbox"
                     id="allCitiesCheckBox"
                   />
-                  <span class="cities-search-box__city-check-box-ui"></span>
+                  <span class="check-box__ui"></span>
                 </div>
               </label>
             </a>
@@ -1700,42 +1700,40 @@
               <a href="#" class="cities-search-box__city">
                 <label class="cities-search-box__city-content">
                   تبریز
-                  <div class="cities-search-box__check-box-wrapper">
+                  <div class="check-box">
                     <input
-                      class="cities-search-box__city-check-box-input"
+                      class="check-box__input"
                       type="checkbox"
-                      id="allCitiesCheckBox"
                     />
-                    <span class="cities-search-box__city-check-box-ui"></span>
+                    <span class="check-box__ui"></span>
                   </div>
                 </label>
               </a>
               <a href="#" class="cities-search-box__city">
                 <label class="cities-search-box__city-content">
                   تبریز
-                  <div class="cities-search-box__check-box-wrapper">
+                  <div class="check-box">
                     <input
-                      class="cities-search-box__city-check-box-input"
+                      class="check-box__input"
                       type="checkbox"
-                      id="allCitiesCheckBox"
                     />
-                    <span class="cities-search-box__city-check-box-ui"></span>
+                    <span class="check-box__ui"></span>
                   </div>
                 </label>
               </a>
               <a href="#" class="cities-search-box__city">
                 <label class="cities-search-box__city-content">
                   تبریز
-                  <div class="cities-search-box__check-box-wrapper">
+                  <div class="check-box">
                     <input
-                      class="cities-search-box__city-check-box-input"
+                      class="check-box__input"
                       type="checkbox"
-                      id="allCitiesCheckBox"
                     />
-                    <span class="cities-search-box__city-check-box-ui"></span>
+                    <span class="check-box__ui"></span>
                   </div>
                 </label>
               </a>
+
             </div>
           </div>
         </div>
@@ -1759,6 +1757,218 @@
     </div>
 
     <!--------------- CITIES SEARCH BOX END --------------->
+
+    <!--------------- NEIGHBORHOOD SEARCH BOX START --------------->
+
+    <!-- add 'show' class to '.neighborhoods' element to make it visible. -->
+    <div class="neighborhoods">
+      <div class="neighborhoods__content">
+        <div class="neighborhoods__header">
+          <div class="neighborhoods__header-title-and-action-btn">
+            <p class="neighborhoods__header-title">تعیین محل</p>
+            <!-- add 'show' class to '.neighborhoods__header-action-btn' btn to make it visible -->
+            <button class="neighborhoods__header-action-btn" id="removeAllSelectedCitiesBtn">حذف همه</button>
+          </div>
+          <div class="neighborhoods__header-description-and-selected-neighborhoods">
+            <!-- add 'show' class to '.neighborhoods__selected-neighborhoods-wrapper' element to make it visible -->
+            <div class="neighborhoods__selected-neighborhoods-wrapper" id="selectedNeighborhoodsWrapper">
+
+              <div class="neighborhoods__selected-neighborhood">
+                <span class="neighborhoods__selected-neighborhood-title">آبشار</span>
+                <button class="neighborhoods__remove-selected-neighborhood-btn">
+                  <i class="fa fa-xmark"></i>
+                </button>
+              </div>
+
+              <div class="neighborhoods__selected-neighborhood">
+                <span class="neighborhoods__selected-neighborhood-title">آزادگان</span>
+                <button class="neighborhoods__remove-selected-neighborhood-btn">
+                  <i class="fa fa-xmark"></i>
+                </button>
+              </div>
+
+              <div class="neighborhoods__selected-neighborhood">
+                <span class="neighborhoods__selected-neighborhood-title">شریعتی</span>
+                <button class="neighborhoods__remove-selected-neighborhood-btn">
+                  <i class="fa fa-xmark"></i>
+                </button>
+              </div>
+
+              <div class="neighborhoods__selected-neighborhood">
+                <span class="neighborhoods__selected-neighborhood-title">آبشار</span>
+                <button class="neighborhoods__remove-selected-neighborhood-btn">
+                  <i class="fa fa-xmark"></i>
+                </button>
+              </div>
+              <div class="neighborhoods__selected-neighborhood">
+                <span class="neighborhoods__selected-neighborhood-title">آبشار</span>
+                <button class="neighborhoods__remove-selected-neighborhood-btn">
+                  <i class="fa fa-xmark"></i>
+                </button>
+              </div>
+              <div class="neighborhoods__selected-neighborhood">
+                <span class="neighborhoods__selected-neighborhood-title">آبشار</span>
+                <button class="neighborhoods__remove-selected-neighborhood-btn">
+                  <i class="fa fa-xmark"></i>
+                </button>
+              </div>
+
+            </div>
+            <p class="neighborhoods__header-description">حداقل یک محله انتخاب کنید.</p>
+          </div>
+          <div class="input-wrapper">
+            <i class="fa fa-search input-wrapper__icon neighborhoods__header-input-icon"></i>
+            <input
+              type="text"
+              class="input-wrapper__input neighborhoods__header-input"
+              id="searchCityInput"
+              placeholder="جستجو در محله ها"
+            />
+          </div>
+        </div>
+
+        <div class="neighborhoods__body">
+          <ul class="neighborhoods__neighborhoods-wrapper" id="neighborhoodsWrapper">
+
+            <li class="neighborhoods__neighborhood">
+              <label class="neighborhoods__neighborhood-content">
+                <div class="neighborhoods__neighborhood-name-and-checkbox">
+                  <p class="neighborhoods__neighborhood-name">آبشار</p>
+                  <div class="check-box">
+                    <input
+                      class="check-box__input"
+                      type="checkbox"
+                    />
+                    <span class="check-box__ui"></span>
+                  </div>
+                </div>
+                <p class="neighborhoods__neighborhood-sub-locations">سپهسالار، مسرور، الهیه، مشتاق، باغ ارم</p>
+              </label>
+            </li>
+
+            <li class="neighborhoods__neighborhood">
+              <label class="neighborhoods__neighborhood-content">
+                <div class="neighborhoods__neighborhood-name-and-checkbox">
+                  <p class="neighborhoods__neighborhood-name">آبشار</p>
+                  <div class="check-box">
+                    <input
+                      class="check-box__input"
+                      type="checkbox"
+                    />
+                    <span class="check-box__ui"></span>
+                  </div>
+                </div>
+                <p class="neighborhoods__neighborhood-sub-locations">سپهسالار، مسرور، الهیه، مشتاق، باغ ارم</p>
+              </label>
+            </li>
+
+            <li class="neighborhoods__neighborhood">
+              <label class="neighborhoods__neighborhood-content">
+                <div class="neighborhoods__neighborhood-name-and-checkbox">
+                  <p class="neighborhoods__neighborhood-name">آبشار</p>
+                  <div class="check-box">
+                    <input
+                      class="check-box__input"
+                      type="checkbox"
+                    />
+                    <span class="check-box__ui"></span>
+                  </div>
+                </div>
+                <p class="neighborhoods__neighborhood-sub-locations">سپهسالار، مسرور، الهیه، مشتاق، باغ ارم</p>
+              </label>
+            </li>
+
+            <li class="neighborhoods__neighborhood">
+              <label class="neighborhoods__neighborhood-content">
+                <div class="neighborhoods__neighborhood-name-and-checkbox">
+                  <p class="neighborhoods__neighborhood-name">آبشار</p>
+                  <div class="check-box">
+                    <input
+                      class="check-box__input"
+                      type="checkbox"
+                    />
+                    <span class="check-box__ui"></span>
+                  </div>
+                </div>
+                <p class="neighborhoods__neighborhood-sub-locations">سپهسالار، مسرور، الهیه، مشتاق، باغ ارم</p>
+              </label>
+            </li>
+
+            <li class="neighborhoods__neighborhood">
+              <label class="neighborhoods__neighborhood-content">
+                <div class="neighborhoods__neighborhood-name-and-checkbox">
+                  <p class="neighborhoods__neighborhood-name">آبشار</p>
+                  <div class="check-box">
+                    <input
+                      class="check-box__input"
+                      type="checkbox"
+                    />
+                    <span class="check-box__ui"></span>
+                  </div>
+                </div>
+                <p class="neighborhoods__neighborhood-sub-locations">سپهسالار، مسرور، الهیه، مشتاق، باغ ارم</p>
+              </label>
+            </li>
+
+            <li class="neighborhoods__neighborhood">
+              <label class="neighborhoods__neighborhood-content">
+                <div class="neighborhoods__neighborhood-name-and-checkbox">
+                  <p class="neighborhoods__neighborhood-name">آبشار</p>
+                  <div class="check-box">
+                    <input
+                      class="check-box__input"
+                      type="checkbox"
+                    />
+                    <span class="check-box__ui"></span>
+                  </div>
+                </div>
+                <p class="neighborhoods__neighborhood-sub-locations">سپهسالار، مسرور، الهیه، مشتاق، باغ ارم</p>
+              </label>
+            </li>
+
+            <li class="neighborhoods__neighborhood">
+              <label class="neighborhoods__neighborhood-content">
+                <div class="neighborhoods__neighborhood-name-and-checkbox">
+                  <p class="neighborhoods__neighborhood-name">آبشار</p>
+                  <div class="check-box">
+                    <input
+                      class="check-box__input"
+                      type="checkbox"
+                    />
+                    <span class="check-box__ui"></span>
+                  </div>
+                </div>
+                <p class="neighborhoods__neighborhood-sub-locations">سپهسالار، مسرور، الهیه، مشتاق، باغ ارم</p>
+              </label>
+            </li>
+
+            <li class="neighborhoods__neighborhood">
+              <label class="neighborhoods__neighborhood-content">
+                <div class="neighborhoods__neighborhood-name-and-checkbox">
+                  <p class="neighborhoods__neighborhood-name">آبشار</p>
+                  <div class="check-box">
+                    <input
+                      class="check-box__input"
+                      type="checkbox"
+                    />
+                    <span class="check-box__ui"></span>
+                  </div>
+                </div>
+                <p class="neighborhoods__neighborhood-sub-locations">سپهسالار، مسرور، الهیه، مشتاق، باغ ارم</p>
+              </label>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="neighborhoods__footer">
+          <button class="btn">انصراف</button>
+          <button class="btn btn--primary" disabled>تایید</button>
+        </div>
+      </div>
+    </div>
+
+    <!--------------- NEIGHBORHOOD SEARCH BOX END --------------->
 
     <!-- add 'show' class to make the loader visible -->
     <div class="loader__container" id="loader">

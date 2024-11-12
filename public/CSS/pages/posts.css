@@ -3,6 +3,7 @@
 @import "../components/loader.css";
 @import "../components/select-box.css";
 @import "../components/toggle-btn.css";
+@import '../layout/neighborhoods-search-box.css';
 
 .sidebar-and-main {
   display: flex;
