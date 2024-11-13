@@ -315,6 +315,31 @@
   text-align: center;
 }
 
+.no-posts-alert-box{
+  display: none;
+  padding-bottom: 2rem;
+}
+
+.no-posts-alert-box.show{
+  display: block;
+}
+
+.no-posts-alert-box__title{
+  color: var(--text-color-secondary);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.no-posts-alert-box__sub-title{
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.no-posts-alert-box.show ~ .posts-wrapper{
+  display: none;
+}
+
+
 .main__posts-location-description {
   margin: 2rem 0;
   font-size: var(--font-size-xs);
