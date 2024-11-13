@@ -52,18 +52,41 @@ const calculateRelativeTime = (dateString) => {
 
   // Calculate differences with exact month and year handling
   const years = now.getFullYear() - date.getFullYear();
-  const months = (now.getMonth() - date.getMonth()) + (years * 12);
+  const months = now.getMonth() - date.getMonth() + years * 12;
 
-  const rtf = new Intl.RelativeTimeFormat('fa', { numeric: 'auto' });
+  const rtf = new Intl.RelativeTimeFormat("fa", { numeric: "auto" });
 
-  if (years > 0) return rtf.format(-years, 'year');
-  if (months > 0) return rtf.format(-months, 'month');
-  if (days > 0) return rtf.format(-days, 'day');
-  if (hours > 0) return rtf.format(-hours, 'hour');
-  if (minutes > 0) return rtf.format(-minutes, 'minute');
-  if (seconds > 0) return rtf.format(-seconds, 'second');
+  if (years > 0) return rtf.format(-years, "year");
+  if (months > 0) return rtf.format(-months, "month");
+  if (days > 0) return rtf.format(-days, "day");
+  if (hours > 0) return rtf.format(-hours, "hour");
+  if (minutes > 0) return rtf.format(-minutes, "minute");
+  if (seconds > 0) return rtf.format(-seconds, "second");
 
-  return 'چند لحظه پیش';
+  return "چند لحظه پیش";
+};
+
+const getUrlParam = (key) => {
+  const param = new URLSearchParams(location.search);
+  return param.get(key);
+};
+
+const setUrlParam = (key, value) => {
+  const param = new URLSearchParams(location.search);
+  param.set(key, value);
+  const searchString = param.toString();
+  const newUrl = `${window.location.pathname}?${searchString}`;
+  window.history.replaceState({}, "", newUrl);
+};
+
+const removeUrlParam = (key) => {
+  const param = new URLSearchParams(location.search);
+  param.delete(key);
+  // check if any parameter exist
+  const newUrl = param.toString()
+    ? `${window.location.pathname}?${param}`
+    : window.location.pathname;
+  window.history.replaceState({}, "", newUrl);
 };
 
 export {
@@ -75,4 +98,7 @@ export {
   getFromLocalStorage,
   removeFromLocalStorage,
   calculateRelativeTime,
+  getUrlParam,
+  setUrlParam,
+  removeUrlParam,
 };
