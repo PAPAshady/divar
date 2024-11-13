@@ -23,7 +23,6 @@ const getAllCategories = async () => {
 
 const renderMainCategoriesInSideBar = (categoriesArray, wrapperElement) => {
   wrapperElement.innerHTML = "";
-  console.log(categoriesArray);
   const allCategories = categoriesArray
     .map(
       (category) =>
