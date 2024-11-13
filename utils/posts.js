@@ -1,5 +1,5 @@
 import { baseApiUrl, filesUrl } from "./constants.js";
-import { calculateRelativeTime, removeLoader } from "./sharedUtils.js";
+import { calculateRelativeTime } from "./sharedUtils.js";
 
 const getPosts = async (cityID) => {
   const res = await fetch(`${baseApiUrl}post/?city=${cityID}`);
