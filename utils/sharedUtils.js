@@ -41,6 +41,31 @@ const removeLoader = () => {
   document.getElementById("loader").classList.remove("show");
 };
 
+const calculateRelativeTime = (dateString) => {
+  const date = new Date(dateString);
+  const now = new Date();
+
+  const seconds = Math.floor((now - date) / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+  const days = Math.floor(hours / 24);
+
+  // Calculate differences with exact month and year handling
+  const years = now.getFullYear() - date.getFullYear();
+  const months = (now.getMonth() - date.getMonth()) + (years * 12);
+
+  const rtf = new Intl.RelativeTimeFormat('fa', { numeric: 'auto' });
+
+  if (years > 0) return rtf.format(-years, 'year');
+  if (months > 0) return rtf.format(-months, 'month');
+  if (days > 0) return rtf.format(-days, 'day');
+  if (hours > 0) return rtf.format(-hours, 'hour');
+  if (minutes > 0) return rtf.format(-minutes, 'minute');
+  if (seconds > 0) return rtf.format(-seconds, 'second');
+
+  return 'چند لحظه پیش';
+};
+
 export {
   setCookie,
   removeCookie,
@@ -49,4 +74,5 @@ export {
   setToLocalStorage,
   getFromLocalStorage,
   removeFromLocalStorage,
+  calculateRelativeTime,
 };
