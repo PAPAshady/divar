@@ -1,21 +1,14 @@
 import { categoriesIcons } from "./categories.js";
-import { setUrlParam, removeUrlParam } from "./sharedUtils.js";
+import { setUrlParam, removeUrlParam, getUrlParam } from "./sharedUtils.js";
 
 const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
   const sidebarSubCategoriesSection = document.getElementById(
     "sidebarSubCategoriesSection"
   );
-  const sidebarSubCategoriesSectionTitle = document.getElementById(
-    "sidebarSubCategoriesSectionTitle"
-  );
-  const sidebarSubCategoriesWrapper = document.getElementById(
-    "sidebarSubCategoriesWrapper"
-  );
   const sidebarSubCategoriesMenuBackBtn = document.getElementById(
     "sidebarSubCategoriesMenuBackBtn"
   );
 
-  // render main categories in sidebar
   wrapperElement.innerHTML = "";
   const mainCategories = categoriesArray
     .map(
@@ -35,7 +28,6 @@ const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
     .join("");
   wrapperElement.insertAdjacentHTML("beforeend", mainCategories);
 
-  // render all sub categories and their nested categories when user clicks on a main category in sidebar
   const mainCategoriesElements =
     document.querySelectorAll(".sidebar__category");
 
@@ -45,63 +37,73 @@ const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
         (category) => category._id === categoryElement.dataset.categoryId
       );
       setUrlParam("categoryID", selectedCategory._id);
-      sidebarSubCategoriesSectionTitle.textContent = selectedCategory.title;
-      sidebarSubCategoriesWrapper.innerHTML = "";
-      const subCategoriesElements = selectedCategory.subCategories
-        .map(
-          (subCategory) =>
-            `<li
-                class="sidebar__sub-category"
-                data-sub-category-id="${subCategory._id}"
-            >
-                <a
-                  href="Javascript:void(0)"
-                  class="sidebar__sub-category-link"
-                  onclick="sidebarSubCategoryClickHandler(this, '${
-                    subCategory._id
-                  }')"
-                >
-                  <span class="sidebar__sub-category-link-text"
-                    >${subCategory.title}</span
-                  >
-                </a>
-                <ul
-                  class="sidebar__sub-category-nesetd-categories-wrapper"
-                  id="nestedSubCategoriesWrapper"
-                >
-                  ${subCategory.subCategories
-                    .map(
-                      (nestedCategory) =>
-                        `<li
-                            class="sidebar__sub-category-nesetd-category"
-                            onclick="sidebarNestedCategoryClickHandler(this, '${nestedCategory._id}')"
-                            data-nested-category-id="${nestedCategory._id}"
-                        >
-                          <a
-                            href="Javascript:void(0)"
-                            class="sidebar__sub-category-nesetd-category-link"
-                            >${nestedCategory.title}</a
-                          >
-                        </li>`
-                    )
-                    .join("")}
-                </ul>
-            </li>`
-        )
-        .join("");
-      sidebarSubCategoriesWrapper.insertAdjacentHTML(
-        "beforeend",
-        subCategoriesElements
-      );
-      sidebarSubCategoriesSection.classList.add("show");
-    });
-
-    // close the sub categories menu when user clicks on back btn
-    sidebarSubCategoriesMenuBackBtn.addEventListener("click", () => {
-      removeUrlParam("categoryID");
-      sidebarSubCategoriesSection.classList.remove("show");
+      location.reload();
     });
   });
+
+  // close the sub categories menu when user clicks on back btn
+  sidebarSubCategoriesMenuBackBtn.addEventListener("click", () => {
+    removeUrlParam("categoryID");
+    sidebarSubCategoriesSection.classList.remove("show");
+    location.reload();
+  });
+};
+
+const renderSubCategoriesInSideBar = (subCategoriesArray) => {
+  const sidebarSubCategoriesWrapper = document.getElementById(
+    "sidebarSubCategoriesWrapper"
+  );
+  const sidebarSubCategoriesSection = document.getElementById(
+    "sidebarSubCategoriesSection"
+  );
+
+  sidebarSubCategoriesWrapper.innerHTML = "";
+  const subCategoriesElements = subCategoriesArray
+    .map(
+      (subCategory) =>
+        `<li
+          class="sidebar__sub-category"
+          data-sub-category-id="${subCategory._id}"
+        >
+          <a
+            href="Javascript:void(0)"
+            class="sidebar__sub-category-link"
+            onclick="sidebarSubCategoryClickHandler(this, '${subCategory._id}')"
+          >
+            <span class="sidebar__sub-category-link-text"
+              >${subCategory.title}</span
+            >
+          </a>
+          <ul
+            class="sidebar__sub-category-nesetd-categories-wrapper"
+            id="nestedSubCategoriesWrapper"
+          >
+            ${subCategory.subCategories
+              .map(
+                (nestedCategory) =>
+                  `<li
+                    class="sidebar__sub-category-nesetd-category"
+                    onclick="sidebarNestedCategoryClickHandler(this, '${nestedCategory._id}')"
+                    data-nested-category-id="${nestedCategory._id}"
+                  >
+                    <a
+                      href="Javascript:void(0)"
+                      class="sidebar__sub-category-nesetd-category-link"
+                      >${nestedCategory.title}</a
+                    >
+                  </li>`
+              )
+              .join("")}
+          </ul>
+        </li>`
+    )
+    .join("");
+
+  sidebarSubCategoriesWrapper.insertAdjacentHTML(
+    "beforeend",
+    subCategoriesElements
+  );
+  sidebarSubCategoriesSection.classList.add("show");
 };
 
 const sidebarSubCategoryClickHandler = (element, subCategoryID) => {
@@ -122,6 +124,7 @@ const sidebarSubCategoryClickHandler = (element, subCategoryID) => {
 
   element.parentElement.classList.add("active");
   setUrlParam("categoryID", subCategoryID);
+  location.reload();
 };
 
 const sidebarNestedCategoryClickHandler = (element, nestedCategoryID) => {
@@ -133,10 +136,98 @@ const sidebarNestedCategoryClickHandler = (element, nestedCategoryID) => {
   );
   element.classList.add("active");
   setUrlParam("categoryID", nestedCategoryID);
+  location.reload();
+};
+
+// This function runs on every page load to check if a specific category is selected.
+// If a category is selected, it highlights the corresponding item in the sidebar as active.
+const updateSidebarWithActiveCategory = (categoriesArray) => {
+  const sidebarSubCategoriesSectionTitle = document.getElementById(
+    "sidebarSubCategoriesSectionTitle"
+  );
+  const currentCategoryID = getUrlParam("categoryID");
+
+  // Check if 'currentCategoryID' exists.
+  // If it doesn't exist, the user hasn't selected any category.
+  // If it exists, the user has selected a category, but we need to determine which one.
+  if (currentCategoryID) {
+    const subCategories = categoriesArray.flatMap(
+      (category) => category.subCategories
+    );
+    const nestedCategories = subCategories.flatMap(
+      (subCategory) => subCategory.subCategories
+    );
+
+    const findCategoryById = (categoriesArray, categoryId) =>
+      categoriesArray.find((category) => category._id === categoryId);
+
+    let currentNestedCategory = null;
+    let currentSubCategory = null;
+    let currentMainCategory = findCategoryById(
+      categoriesArray,
+      currentCategoryID
+    );
+
+    // Check if the selected category is a main category.
+    // If 'currentMainCategory' doesn't exist, the selected category might be a subcategory or a nested category.
+    if (!currentMainCategory) {
+      currentSubCategory = findCategoryById(subCategories, currentCategoryID);
+
+      // Check if the selected category is a subcategory.
+      // If 'currentSubCategory' doesn't exist, the selected category is a nested category.
+      if (currentSubCategory) {
+        currentMainCategory = findCategoryById(
+          categoriesArray,
+          currentSubCategory.parent
+        );
+      } else {
+        // Find the current category (which is a nested category) among all nested categories.
+        currentNestedCategory = findCategoryById(
+          nestedCategories,
+          currentCategoryID
+        );
+
+        // Find the subcategory that is the parent of the current nested category.
+        currentSubCategory = findCategoryById(
+          subCategories,
+          currentNestedCategory.parent
+        );
+
+        // Find the main category that is the grandparent of the current nested category.
+        currentMainCategory = findCategoryById(
+          categoriesArray,
+          currentSubCategory.parent
+        );
+      }
+    }
+
+    // Update the sidebar title to the main category's title.
+    sidebarSubCategoriesSectionTitle.textContent = currentMainCategory.title;
+
+    // Render the subcategories of the current main category in the sidebar.
+    renderSubCategoriesInSideBar(currentMainCategory.subCategories);
+
+    // Highlight the selected subcategory in the sidebar (if it exists).
+    const currentSubCategoryElement = document.querySelector(
+      `[data-sub-category-id="${currentSubCategory?._id}"]`
+    );
+
+    // Highlight the selected nested category in the sidebar (if it exists).
+    const currentNestedCategoryElement = document.querySelector(
+      `[data-nested-category-id="${currentNestedCategory?._id}"]`
+    );
+
+    // If the selected category is a subcategory, mark the corresponding element as active.
+    currentSubCategoryElement?.classList.add("active");
+
+    // If the selected category is a nested category, mark the corresponding element as active.
+    currentNestedCategoryElement?.classList.add("active");
+  }
 };
 
 export {
   renderCategoriesInSideBar,
   sidebarSubCategoryClickHandler,
   sidebarNestedCategoryClickHandler,
+  updateSidebarWithActiveCategory,
 };
