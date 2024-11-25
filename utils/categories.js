@@ -21,22 +21,5 @@ const getAllCategories = async () => {
   return await res.json();
 };
 
-const renderMainCategoriesInSideBar = (categoriesArray, wrapperElement) => {
-  wrapperElement.innerHTML = "";
-  const allCategories = categoriesArray
-    .map(
-      (category) =>
-        `<li class="sidebar__category">
-            <a href="Javascript:void(0)" class="sidebar__category-link">
-                <i class="${
-                  categoriesIcons[category.slug]
-                } sidebar__category-icon"></i>
-                <span class="sidebar__category-title">${category.title}</span>
-            </a>
-        </li>`
-    )
-    .join("");
-  wrapperElement.insertAdjacentHTML("beforeend", allCategories);
-};
 
-export { getAllCategories, renderMainCategoriesInSideBar };
+export { getAllCategories, categoriesIcons };
