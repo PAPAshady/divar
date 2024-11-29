@@ -6,6 +6,7 @@ import {
   sidebarSubCategoryClickHandler,
   sidebarNestedCategoryClickHandler,
   updateSidebarWithActiveCategory,
+  sidebarAccordionsHandler,
 } from "../../utils/sidebar.js";
 
 window.sidebarSubCategoryClickHandler = sidebarSubCategoryClickHandler;
@@ -23,5 +24,6 @@ window.addEventListener("load", async () => {
   renderPosts(postsResponse.data.posts, postsWrapper, noPostsAlertBox);
   renderCategoriesInSideBar(categoriesResponse.data.categories, sidebarCategoriesWrapper);
   updateSidebarWithActiveCategory(categoriesResponse.data.categories)
+  sidebarAccordionsHandler()
   removeLoader();
 });

@@ -225,9 +225,26 @@ const updateSidebarWithActiveCategory = (categoriesArray) => {
   }
 };
 
+const sidebarAccordionsHandler = () => {
+  const allAccordions = document.querySelectorAll(".sidebar__filter-drop-down");
+
+  allAccordions.forEach((accordion) => {
+    accordion.firstElementChild.addEventListener("click", () => {
+      const accordionBody = accordion.querySelector(
+        ".sidebar__filter-drop-down-body"
+      );
+      accordion.classList.toggle("active");
+      accordionBody.style.height = accordion.classList.contains("active")
+        ? `${accordionBody.scrollHeight}px`
+        : 0;
+    });
+  });
+};
+
 export {
   renderCategoriesInSideBar,
   sidebarSubCategoryClickHandler,
   sidebarNestedCategoryClickHandler,
   updateSidebarWithActiveCategory,
+  sidebarAccordionsHandler,
 };

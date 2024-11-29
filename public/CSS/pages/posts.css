@@ -222,13 +222,9 @@
 }
 
 .sidebar__filter-drop-down-body {
-  max-height: 0;
-  transition: max-height 300ms;
+  height: 0;
+  transition: height 300ms;
   overflow: hidden;
-}
-
-.sidebar__filter-drop-down.active .sidebar__filter-drop-down-body {
-  max-height: 1000px;
 }
 
 /* END SIDEBAR ACCORDIONS */
