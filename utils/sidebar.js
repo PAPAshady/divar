@@ -141,7 +141,7 @@ const sidebarNestedCategoryClickHandler = (element, nestedCategoryID) => {
 
 // This function runs on every page load to check if a specific category is selected.
 // If a category is selected, it highlights the corresponding item in the sidebar as active.
-const updateSidebarWithActiveCategory = (categoriesArray) => {
+const showActiveCategoryInSidebar = (categoriesArray) => {
   const sidebarSubCategoriesSectionTitle = document.getElementById(
     "sidebarSubCategoriesSectionTitle"
   );
@@ -245,6 +245,6 @@ export {
   renderCategoriesInSideBar,
   sidebarSubCategoryClickHandler,
   sidebarNestedCategoryClickHandler,
-  updateSidebarWithActiveCategory,
+  showActiveCategoryInSidebar,
   sidebarAccordionsHandler,
 };
