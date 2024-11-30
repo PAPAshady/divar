@@ -1,7 +1,7 @@
 @import "../shared.css";
 @import "../layout/header.css";
 @import "../components/loader.css";
-@import "../components/select-box.css";
+@import "../components/advanced-select-box.css";
 @import "../components/toggle-btn.css";
 @import "../layout/neighborhoods-search-box.css";
 @import "../components/post.css";
