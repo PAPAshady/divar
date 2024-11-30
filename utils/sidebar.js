@@ -222,6 +222,15 @@ const showActiveCategoryInSidebar = (categoriesArray) => {
 
     // If the selected category is a nested category, mark the corresponding element as active.
     currentNestedCategoryElement?.classList.add("active");
+
+    // find the current category filters and render them in the sidebar.
+    const currentCategoryFilters = currentNestedCategory
+      ? currentNestedCategory.filters
+      : currentSubCategory
+      ? currentSubCategory.filters
+      : currentMainCategory.filters;
+
+    renderCategoryFiltersInSidebar(currentCategoryFilters);
   }
 };
 
@@ -258,6 +267,113 @@ const sidebarSelectBoxesHandler = () => {
       }
     });
   });
+};
+
+const renderCategoryFiltersInSidebar = (categoryFiltersArray) => {
+  const categoryFiltersWrapper = document.getElementById(
+    "sidebarDynamicCategoryFiltersWrapper"
+  );
+
+  categoryFiltersWrapper.innerHTML = "";
+
+  console.log(categoryFiltersArray);
+
+  const allFilterElements = categoryFiltersArray
+    .map(
+      (filter) =>
+        `<div class="sidebar__filter-drop-down">
+          <div class="sidebar__filter-drop-down-header">
+            <div
+              class="sidebar__filter-drop-down-header-title-and-icon"
+            >
+              <i
+                class="fa fa-chevron-down sidebar__filter-drop-down-header-icon"
+              ></i>
+              <span class="sidebar__filter-drop-down-header-title"
+                >${filter.name}</span
+              >
+            </div>
+          </div>
+          <div class="sidebar__filter-drop-down-body">
+
+            ${
+              filter.type === "selectbox"
+                ? `<div class="simple-select-box" data-value="-1">
+                  <button class="simple-select-box__open-btn">
+                    <span class="simple-select-box__placeholder"
+                      >انتخاب</span
+                    >
+                    <i
+                      class="fa fa-chevron-down simple-select-box__arrow-down-icon"
+                    ></i>
+                  </button>
+                  <div
+                    class="simple-select-box__options-and-search-box-wrapper"
+                  >
+                    <ul class="simple-select-box__options-container">
+                      ${filter.options
+                        .map(
+                          (option) =>
+                            `<li
+                            class="simple-select-box__option"
+                            data-value="${option}"
+                          >
+                            <i
+                              class="fa fa-check simple-select-box__option-check-icon"
+                            ></i>
+                            <span class="simple-select-box__option-title"
+                              >${option}</span
+                            >
+                          </li>`
+                        )
+                        .join("")}
+                    </ul>
+                    <div
+                      class="simple-select-box__search-box${
+                        filter.options.length > 4 ? " show" : ""
+                      }"
+                    >
+                      <i
+                        class="fa fa-search simple-select-box__search-box-icon"
+                      ></i>
+                      <input
+                        type="text"
+                        placeholder="جستجو"
+                        class="simple-select-box__search-box-input"
+                      />
+                    </div>
+                  </div>
+                </div>`
+                : ""
+            }
+
+            ${
+              filter.type === "checkbox"
+                ? `<div class="sidebar__post-status-filters">
+                    <label class="sidebar__post-status-toggle-btn-wrapper">
+                        <span class="sidebar__post-status-toggle-btn-label"
+                          >${filter.name}</span
+                        >
+                        <div class="toggle-btn">
+                          <input
+                            class="toggle-btn__input"
+                            type="checkbox"
+                          />
+                          <span
+                            class="toggle-btn__input-ui toggle-btn__input-ui--small"
+                          ></span>
+                        </div>
+                    </label>
+                  </div>`
+                : ""
+            }
+
+          </div>
+        </div>`
+    )
+    .join("");
+
+  categoryFiltersWrapper.insertAdjacentHTML("beforeend", allFilterElements);
 };
 
 export {
