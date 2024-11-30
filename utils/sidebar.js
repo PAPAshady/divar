@@ -241,10 +241,30 @@ const sidebarAccordionsHandler = () => {
   });
 };
 
+const sidebarSelectBoxesHandler = () => {
+  const allSelectBoxes = document.querySelectorAll(".simple-select-box");
+  allSelectBoxes.forEach((selectBox) => {
+    const selectBoxParent = selectBox.parentElement;
+    selectBox.firstElementChild.addEventListener("click", () => {
+      selectBox.classList.toggle("active");
+      selectBoxParent.style.overflow = "visible";
+    });
+
+    // close select box in case user clicks anywhere outside of select box.
+    window.addEventListener("click", (e) => {
+      if (!selectBox.contains(e.target)) {
+        selectBoxParent.style.overflow = "hidden";
+        selectBox.classList.remove("active");
+      }
+    });
+  });
+};
+
 export {
   renderCategoriesInSideBar,
   sidebarSubCategoryClickHandler,
   sidebarNestedCategoryClickHandler,
   showActiveCategoryInSidebar,
   sidebarAccordionsHandler,
+  sidebarSelectBoxesHandler,
 };

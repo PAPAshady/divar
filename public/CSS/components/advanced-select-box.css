@@ -1,9 +1,9 @@
-.select-box{
+.advanced-select-box{
     width: 100%;
     position: relative;
 }
 
-.select-box__open-btn{
+.advanced-select-box__open-btn{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -14,11 +14,11 @@
     transition: border-color 300ms;
 }
 
-.select-box__open-btn:hover{
+.advanced-select-box__open-btn:hover{
     border-color: var(--text-color-secondary);
 }
 
-.select-box__current-value-wrapper{
+.advanced-select-box__current-value-wrapper{
     display: flex;
     align-items: center;
     gap: .5rem;
@@ -29,7 +29,7 @@
     transition: all 200ms;
 }
 
-.select-box__current-value-wrapper.show{
+.advanced-select-box__current-value-wrapper.show{
     right: 10px;
     opacity: 1;
     visibility: visible;
@@ -37,7 +37,7 @@
     gap: .5rem;
 }
 
-.select-box__remove-selected-value-btn{
+.advanced-select-box__remove-selected-value-btn{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,20 +47,20 @@
     transition: background-color 200ms;
 }
 
-.select-box__remove-selected-value-btn:hover{
+.advanced-select-box__remove-selected-value-btn:hover{
     background-color: var(--border-color);
 }
 
-.select-box__current-value{
+.advanced-select-box__current-value{
     color: var(--text-color-secondary);
 }
 
-.select-box__open-btn-placeholder{
+.advanced-select-box__open-btn-placeholder{
     transition: all 200ms;
     display: block;
 }
 
-.select-box__current-value-wrapper.show ~ .select-box__open-btn-placeholder{
+.advanced-select-box__current-value-wrapper.show ~ .select-box__open-btn-placeholder{
     opacity: 0;
     visibility: hidden;
     transform: translate(-10px);

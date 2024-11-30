@@ -2,6 +2,7 @@
 @import "../layout/header.css";
 @import "../components/loader.css";
 @import "../components/advanced-select-box.css";
+@import '../components/simple-select-box.css';
 @import "../components/toggle-btn.css";
 @import "../layout/neighborhoods-search-box.css";
 @import "../components/post.css";
@@ -163,6 +164,7 @@
 }
 
 .sidebar__filters-drop-downs-wrapper,
+.sidebar_dynamic-filters-drop-downs-wrapper,
 .sidebar__filter-drop-down:not(:last-child) {
   border-bottom: 1px solid var(--border-color);
 }

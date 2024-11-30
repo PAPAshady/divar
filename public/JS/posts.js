@@ -7,6 +7,7 @@ import {
   sidebarNestedCategoryClickHandler,
   showActiveCategoryInSidebar,
   sidebarAccordionsHandler,
+  sidebarSelectBoxesHandler,
 } from "../../utils/sidebar.js";
 
 window.sidebarSubCategoryClickHandler = sidebarSubCategoryClickHandler;
@@ -25,5 +26,6 @@ window.addEventListener("load", async () => {
   renderCategoriesInSideBar(categoriesResponse.data.categories, sidebarCategoriesWrapper);
   showActiveCategoryInSidebar(categoriesResponse.data.categories)
   sidebarAccordionsHandler()
+  sidebarSelectBoxesHandler()
   removeLoader();
 });

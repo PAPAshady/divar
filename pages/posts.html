@@ -1125,6 +1125,79 @@
               <div class="sidebar__filters-drop-downs-wrapper">
                 <!-- add 'active' class to '.sidebar__filter-drop-down' to open the accordion.  -->
 
+                <div
+                  class="sidebar_dynamic-filters-drop-downs-wrapper"
+                  id="sidebarDynamicCategoryFiltersWrapper"
+                >
+                  <div class="sidebar__filter-drop-down">
+                    <div class="sidebar__filter-drop-down-header">
+                      <div
+                        class="sidebar__filter-drop-down-header-title-and-icon"
+                      >
+                        <i
+                          class="fa fa-chevron-down sidebar__filter-drop-down-header-icon"
+                        ></i>
+                        <span class="sidebar__filter-drop-down-header-title"
+                          >وضعیت کالا</span
+                        >
+                      </div>
+                    </div>
+                    <div class="sidebar__filter-drop-down-body">
+                      <div class="simple-select-box" data-value="-1">
+                        <button class="simple-select-box__open-btn">
+                          <span class="simple-select-box__placeholder"
+                            >انتخاب</span
+                          >
+                          <i
+                            class="fa fa-chevron-down simple-select-box__arrow-down-icon"
+                          ></i>
+                        </button>
+
+                        <div
+                          class="simple-select-box__options-and-search-box-wrapper"
+                        >
+                          <ul class="simple-select-box__options-container">
+                            <li
+                              class="simple-select-box__option"
+                              data-value="almost-new"
+                            >
+                              <i
+                                class="fa fa-check simple-select-box__option-check-icon"
+                              ></i>
+                              <span class="simple-select-box__option-title"
+                                >در حد نو</span
+                              >
+                            </li>
+
+                            <li
+                              class="simple-select-box__option"
+                              data-value="new"
+                            >
+                              <i
+                                class="fa fa-check simple-select-box__option-check-icon"
+                              ></i>
+                              <span class="simple-select-box__option-title"
+                                >نو</span
+                              >
+                            </li>
+                          </ul>
+                          <!-- add 'show' class to '.simple-select-box__search-box' element to make it visible. -->
+                          <div class="simple-select-box__search-box">
+                            <i
+                              class="fa fa-search simple-select-box__search-box-icon"
+                            ></i>
+                            <input
+                              type="text"
+                              placeholder="جستجو"
+                              class="simple-select-box__search-box-input"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="sidebar__filter-drop-down">
                   <div class="sidebar__filter-drop-down-header">
                     <div
@@ -1182,36 +1255,42 @@
                           >حداقل</span
                         >
 
-                        <!-- add 'active' class to '.select-box' element to open the select box.  -->
+                        <!-- add 'active' class to '.advanced-select-box' element to open the select box.  -->
 
-                        <div class="select-box" data-current-value="null">
+                        <div
+                          class="advanced-select-box"
+                          data-current-value="null"
+                        >
                           <div
-                            class="select-box__open-btn"
+                            class="advanced-select-box__open-btn"
                             id="openMinPriceSelectBoxBtn"
                           >
                             <div
-                              class="select-box__placeholder-and-selected-value"
+                              class="advanced-select-box__placeholder-and-selected-value"
                             >
-                              <!-- add 'show' class to '.select-box__current-value-wrapper' to show the current value and hide the placeholder text of select box -->
-                              <div class="select-box__current-value-wrapper">
+                              <!-- add 'show' class to '.advanced-select-box__current-value-wrapper' to show the current value and hide the placeholder text of select box -->
+                              <div
+                                class="advanced-select-box__current-value-wrapper"
+                              >
                                 <button
-                                  class="select-box__remove-selected-value-btn"
+                                  class="advanced-select-box__remove-selected-value-btn"
                                   id="removeSelectBoxCurrentValueBtn"
                                 >
                                   <i class="fa fa-xmark"></i>
                                 </button>
                                 <span
-                                  class="select-box__current-value"
+                                  class="advanced-select-box__current-value"
                                   id="selectBoxCurrentValue"
                                   >25 هزار تومان</span
                                 >
                               </div>
-                              <span class="select-box__open-btn-placeholder"
+                              <span
+                                class="advanced-select-box__open-btn-placeholder"
                                 >مثلا 10,000 تومان</span
                               >
                             </div>
                             <i
-                              class="fa fa-chevron-down select-box__open-btn-arrow-down-icon"
+                              class="fa fa-chevron-down advanced-select-box__open-btn-arrow-down-icon"
                             ></i>
                           </div>
                         </div>
@@ -1236,36 +1315,42 @@
                           >حداکثر</span
                         >
 
-                        <!-- add 'active' class to '.select-box' element to open the select box.  -->
+                        <!-- add 'active' class to '.advanced-select-box' element to open the select box.  -->
 
-                        <div class="select-box" data-current-value="null">
+                        <div
+                          class="advanced-select-box"
+                          data-current-value="null"
+                        >
                           <div
-                            class="select-box__open-btn"
+                            class="advanced-select-box__open-btn"
                             id="openMinPriceSelectBoxBtn"
                           >
                             <div
-                              class="select-box__placeholder-and-selected-value"
+                              class="advanced-select-box__placeholder-and-selected-value"
                             >
-                              <!-- add 'show' class to '.select-box__current-value-wrapper' to show the current value and hide the placeholder text of select box -->
-                              <div class="select-box__current-value-wrapper">
+                              <!-- add 'show' class to '.advanced-select-box__current-value-wrapper' to show the current value and hide the placeholder text of select box -->
+                              <div
+                                class="advanced-select-box__current-value-wrapper"
+                              >
                                 <button
-                                  class="select-box__remove-selected-value-btn"
+                                  class="advanced-select-box__remove-selected-value-btn"
                                   id="removeSelectBoxCurrentValueBtn"
                                 >
                                   <i class="fa fa-xmark"></i>
                                 </button>
                                 <span
-                                  class="select-box__current-value"
+                                  class="advanced-select-box__current-value"
                                   id="selectBoxCurrentValue"
                                   >25 هزار تومان</span
                                 >
                               </div>
-                              <span class="select-box__open-btn-placeholder"
+                              <span
+                                class="advanced-select-box__open-btn-placeholder"
                                 >مثلا 1،000،000 تومان</span
                               >
                             </div>
                             <i
-                              class="fa fa-chevron-down select-box__open-btn-arrow-down-icon"
+                              class="fa fa-chevron-down advanced-select-box__open-btn-arrow-down-icon"
                             ></i>
                           </div>
                         </div>
@@ -2320,7 +2405,7 @@
     <script src="../Vendor/FontAwesome/all.js"></script>
 
     <!-- Shared scripts -->
-     <script src="../public/JS/shared.js" type="module"></script>
+    <script src="../public/JS/shared.js" type="module"></script>
 
     <!-- Page scripts -->
     <script src="../public/JS/posts.js" type="module"></script>
