@@ -275,9 +275,6 @@ const renderCategoryFiltersInSidebar = (categoryFiltersArray) => {
   );
 
   categoryFiltersWrapper.innerHTML = "";
-
-  console.log(categoryFiltersArray);
-
   const allFilterElements = categoryFiltersArray
     .map(
       (filter) =>
