@@ -57,6 +57,22 @@ select {
   font: inherit;
 }
 
+[data-theme="dark"] ::-webkit-scrollbar-track{
+  background-color: #1f1f21;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb{
+  background-color: #646465;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover{
+  background-color: #727274;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar{
+  width: 15px;
+}
+
 .container {
   width: 98%;
   max-width: 1440px;
