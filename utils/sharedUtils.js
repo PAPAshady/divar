@@ -89,6 +89,13 @@ const removeUrlParam = (key) => {
   window.history.replaceState({}, "", newUrl);
 };
 
+const findParentElementByClassName = (element, className) => {
+  while (!element.classList.contains(className)) {
+    element = element.parentElement;
+  }
+  return element;
+};
+
 export {
   setCookie,
   removeCookie,
@@ -101,4 +108,5 @@ export {
   getUrlParam,
   setUrlParam,
   removeUrlParam,
+  findParentElementByClassName,
 };

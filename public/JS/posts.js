@@ -8,10 +8,12 @@ import {
   showActiveCategoryInSidebar,
   sidebarAccordionsHandler,
   sidebarSelectBoxesHandler,
+  selectBoxOptionClickHandler,
 } from "../../utils/sidebar.js";
 
 window.sidebarSubCategoryClickHandler = sidebarSubCategoryClickHandler;
-window.sidebarNestedCategoryClickHandler = sidebarNestedCategoryClickHandler;
+window.sidebarNestedCategoryClickHandler = sidebarNestedCategoryClickHandler; 
+window.selectBoxOptionClickHandler = selectBoxOptionClickHandler; 
 
 const $ = document;
 const postsWrapper = $.getElementById("postsWrapper");

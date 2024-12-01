@@ -59,6 +59,10 @@
   transition: background-color 200ms;
 }
 
+.simple-select-box__option.active {
+  color: var(--primary-color);
+}
+
 .simple-select-box__option:hover {
   background-color: var(--border-color);
 }

@@ -1,5 +1,10 @@
 import { categoriesIcons } from "./categories.js";
-import { setUrlParam, removeUrlParam, getUrlParam } from "./sharedUtils.js";
+import {
+  setUrlParam,
+  removeUrlParam,
+  getUrlParam,
+  findParentElementByClassName,
+} from "./sharedUtils.js";
 
 const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
   const sidebarSubCategoriesSection = document.getElementById(
@@ -295,11 +300,15 @@ const renderCategoryFiltersInSidebar = (categoryFiltersArray) => {
 
             ${
               filter.type === "selectbox"
-                ? `<div class="simple-select-box" data-value="-1">
+                ? `<div class="simple-select-box" data-value="-1" data-filter-slug="${
+                    filter.slug
+                  }">
                   <button class="simple-select-box__open-btn">
-                    <span class="simple-select-box__placeholder"
-                      >انتخاب</span
+                    <span
+                      class="simple-select-box__placeholder"
                     >
+                      انتخاب
+                    </span>
                     <i
                       class="fa fa-chevron-down simple-select-box__arrow-down-icon"
                     ></i>
@@ -312,15 +321,18 @@ const renderCategoryFiltersInSidebar = (categoryFiltersArray) => {
                         .map(
                           (option) =>
                             `<li
-                            class="simple-select-box__option"
-                            data-value="${option}"
-                          >
+                              class="simple-select-box__option"
+                              data-value="${option}"
+                              onclick="selectBoxOptionClickHandler(this)"
+                            >
                             <i
                               class="fa fa-check simple-select-box__option-check-icon"
                             ></i>
-                            <span class="simple-select-box__option-title"
-                              >${option}</span
+                            <span
+                              class="simple-select-box__option-title"
                             >
+                              ${option}
+                            </span>
                           </li>`
                         )
                         .join("")}
@@ -371,6 +383,80 @@ const renderCategoryFiltersInSidebar = (categoryFiltersArray) => {
     .join("");
 
   categoryFiltersWrapper.insertAdjacentHTML("beforeend", allFilterElements);
+  selectBoxSearchInputHandler(categoryFiltersArray);
+};
+
+const selectBoxOptionClickHandler = (element) => {
+  const selectedValue = element.dataset.value;
+  const selectBox = findParentElementByClassName(element, "simple-select-box");
+  const selectBoxPlaceholder = selectBox.querySelector(
+    ".simple-select-box__placeholder"
+  );
+
+  selectBox.querySelectorAll(".simple-select-box__option").forEach((option) => {
+    option.classList.remove("active");
+  });
+  element.classList.add("active");
+  selectBoxPlaceholder.textContent = selectedValue;
+  selectBox.dataset.value = selectedValue;
+  selectBox.parentElement.style.overflow = "hidden";
+  selectBox.classList.remove("active");
+};
+
+// this function handles search feature for each select-box
+const selectBoxSearchInputHandler = (filtersArray) => {
+  const allSelectBoxSearchInputs = document.querySelectorAll(
+    ".simple-select-box__search-box-input"
+  );
+
+  allSelectBoxSearchInputs.forEach((input) => {
+    const selectBox = findParentElementByClassName(input, "simple-select-box");
+    const selectBoxOptionsWrapper = selectBox.querySelector(
+      ".simple-select-box__options-container"
+    );
+    const currentFilter = filtersArray.find(
+      (filter) => filter.slug === selectBox.dataset.filterSlug
+    );
+
+    input.addEventListener("input", (e) => {
+      const inputValue = e.target.value.trim().toLowerCase();
+      const updatedSelectBoxOptions = currentFilter.options.filter((option) =>
+        option.toLowerCase().includes(inputValue)
+      );
+      selectBoxOptionsWrapper.innerHTML = "";
+
+      if (!updatedSelectBoxOptions.length) {
+        selectBoxOptionsWrapper.innerHTML =
+          '<li class="simple-select-box__option">موردی پیدا نشد :(</li>';
+        return;
+      }
+
+      const updatedSelectBoxOptionElements = updatedSelectBoxOptions
+        .map(
+          (option) =>
+            `<li
+              class="simple-select-box__option"
+              data-value="${option}"
+              onclick="selectBoxOptionClickHandler(this)"
+            >
+              <i
+                class="fa fa-check simple-select-box__option-check-icon"
+              ></i>
+              <span
+                class="simple-select-box__option-title"
+              >
+                ${option}
+              </span>
+            </li>`
+        )
+        .join("");
+
+      selectBoxOptionsWrapper.insertAdjacentHTML(
+        "beforeend",
+        updatedSelectBoxOptionElements
+      );
+    });
+  });
 };
 
 export {
@@ -380,4 +466,5 @@ export {
   showActiveCategoryInSidebar,
   sidebarAccordionsHandler,
   sidebarSelectBoxesHandler,
+  selectBoxOptionClickHandler,
 };
