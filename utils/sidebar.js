@@ -51,6 +51,11 @@ const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
 
   // close the sub categories menu when user clicks on back btn
   sidebarSubCategoriesMenuBackBtn.addEventListener("click", () => {
+    const dynamicCategoryFiltersWrapper = document.getElementById(
+      "sidebarDynamicCategoryFiltersWrapper"
+    );
+    // remove all dynamic categories filters if user click on back btn of category menu in sidebar.
+    dynamicCategoryFiltersWrapper.innerHTML = "";
     removeUrlParam("categoryID");
     sidebarSubCategoriesSection.classList.remove("show");
     showActiveCategoryInSidebar(categoriesArray);
