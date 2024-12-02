@@ -1,4 +1,5 @@
 import { categoriesIcons } from "./categories.js";
+import { getPosts, renderPosts } from "./posts.js";
 import {
   setUrlParam,
   removeUrlParam,
@@ -39,8 +40,9 @@ const renderCategoriesInSideBar = (categoriesArray) => {
   const mainCategoriesElements =
     document.querySelectorAll(".sidebar__category");
 
+  // handle user click on main categories in sidebar.
   mainCategoriesElements.forEach((categoryElement) => {
-    categoryElement.addEventListener("click", () => {
+    categoryElement.addEventListener("click", async () => {
       const selectedCategory = categoriesArray.find(
         (category) => category._id === categoryElement.dataset.categoryId
       );
@@ -49,11 +51,15 @@ const renderCategoriesInSideBar = (categoriesArray) => {
 
       // Attach event listener to updated subCategories in sidebar.
       sidebarSubCategoryClickHandler(categoriesArray);
+
+      // get new posts related to the selected category
+      const { data: postsInfos } = await getPosts();
+      renderPosts(postsInfos.posts);
     });
   });
 
   // close the sub categories menu when user clicks on back btn
-  sidebarSubCategoriesMenuBackBtn.addEventListener("click", () => {
+  sidebarSubCategoriesMenuBackBtn.addEventListener("click", async () => {
     const dynamicCategoryFiltersWrapper = document.getElementById(
       "sidebarDynamicCategoryFiltersWrapper"
     );
@@ -62,6 +68,10 @@ const renderCategoriesInSideBar = (categoriesArray) => {
     removeUrlParam("categoryId");
     sidebarSubCategoriesSection.classList.remove("show");
     showActiveCategoryInSidebar(categoriesArray);
+
+    // get new posts related to the selected category
+    const { data: postsInfos } = await getPosts();
+    renderPosts(postsInfos.posts);
   });
 };
 
@@ -132,10 +142,14 @@ const sidebarSubCategoryClickHandler = (categoriesArray) => {
   );
 
   allSubCategoriesElements.forEach((subCategoryElement) => {
-    subCategoryElement.addEventListener("click", () => {
+    subCategoryElement.addEventListener("click", async () => {
       const subCategoryID = subCategoryElement.dataset.subCategoryId;
       setUrlParam("categoryId", subCategoryID);
       showActiveCategoryInSidebar(categoriesArray);
+
+      // get new posts related to the selected category
+      const { data: postsInfos } = await getPosts();
+      renderPosts(postsInfos.posts);
     });
   });
 };
@@ -146,11 +160,15 @@ const sidebarNestedCategoryClickHandler = (categoriesArray) => {
   );
 
   allNestedCategories.forEach((nestedCategory) => {
-    nestedCategory.addEventListener("click", (e) => {
+    nestedCategory.addEventListener("click", async (e) => {
       e.stopPropagation();
       const nestedCategoryID = nestedCategory.dataset.nestedCategoryId;
       setUrlParam("categoryId", nestedCategoryID);
       showActiveCategoryInSidebar(categoriesArray);
+
+      // get new posts related to the selected category
+      const { data: postsInfos } = await getPosts();
+      renderPosts(postsInfos.posts);
     });
   });
 };
