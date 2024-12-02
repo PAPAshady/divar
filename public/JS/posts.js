@@ -9,10 +9,8 @@ import {
   sidebarAccordionsHandler,
   sidebarSelectBoxesHandler,
   selectBoxOptionClickHandler,
-  // sidebarSubCategoryClickHandler,
 } from "../../utils/sidebar.js";
 
-// window.sidebarSubCategoryClickHandler = sidebarSubCategoryClickHandler;
 window.sidebarNestedCategoryClickHandler = sidebarNestedCategoryClickHandler;
 window.selectBoxOptionClickHandler = selectBoxOptionClickHandler;
 

@@ -42,7 +42,10 @@ const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
         (category) => category._id === categoryElement.dataset.categoryId
       );
       setUrlParam("categoryID", selectedCategory._id);
-      location.reload();
+      showActiveCategoryInSidebar(categoriesArray);
+
+      // attach event listener to updated subCategories in sidebar.
+      sidebarSubCategoryClickHandler(categoriesArray);
     });
   });
 
@@ -50,7 +53,7 @@ const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
   sidebarSubCategoriesMenuBackBtn.addEventListener("click", () => {
     removeUrlParam("categoryID");
     sidebarSubCategoriesSection.classList.remove("show");
-    location.reload();
+    showActiveCategoryInSidebar(categoriesArray);
   });
 };
 
