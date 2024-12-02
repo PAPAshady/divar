@@ -23,5 +23,5 @@ window.addEventListener("load", async () => {
   showActiveCategoryInSidebar(categories);
   sidebarAccordionsHandler();
   sidebarSelectBoxesHandler();
-  removeLoader();
+  removeLoader(document.getElementById("pageLoader"));
 });

@@ -37,8 +37,8 @@ const removeFromLocalStorage = (key) => {
   localStorage.removeItem(key);
 };
 
-const removeLoader = () => {
-  document.getElementById("loader").classList.remove("show");
+const removeLoader = (loaderElement) => {
+  loaderElement.classList.remove("show");
 };
 
 const calculateRelativeTime = (dateString) => {
