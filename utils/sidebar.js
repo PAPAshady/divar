@@ -256,7 +256,7 @@ const sidebarAccordionsHandler = () => {
   const allAccordions = document.querySelectorAll(".sidebar__filter-drop-down");
 
   allAccordions.forEach((accordion) => {
-    accordion.firstElementChild.addEventListener("click", () => {
+    accordion.firstElementChild.onclick = () => {
       const accordionBody = accordion.querySelector(
         ".sidebar__filter-drop-down-body"
       );
@@ -264,7 +264,7 @@ const sidebarAccordionsHandler = () => {
       accordionBody.style.height = accordion.classList.contains("active")
         ? `${accordionBody.scrollHeight}px`
         : 0;
-    });
+    };
   });
 };
 
