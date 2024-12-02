@@ -1,5 +1,5 @@
 import { categoriesIcons } from "./categories.js";
-import { getPosts, renderPosts } from "./posts.js";
+import { getAndRenderPosts } from "./posts.js";
 import {
   setUrlParam,
   removeUrlParam,
@@ -52,14 +52,13 @@ const renderCategoriesInSideBar = (categoriesArray) => {
       // Attach event listener to updated subCategories in sidebar.
       sidebarSubCategoryClickHandler(categoriesArray);
 
-      // get new posts related to the selected category
-      const { data: postsInfos } = await getPosts();
-      renderPosts(postsInfos.posts);
+      // show related posts based on selected category
+      getAndRenderPosts();
     });
   });
 
   // close the sub categories menu when user clicks on back btn
-  sidebarSubCategoriesMenuBackBtn.addEventListener("click", async () => {
+  sidebarSubCategoriesMenuBackBtn.addEventListener("click", () => {
     const dynamicCategoryFiltersWrapper = document.getElementById(
       "sidebarDynamicCategoryFiltersWrapper"
     );
@@ -69,9 +68,8 @@ const renderCategoriesInSideBar = (categoriesArray) => {
     sidebarSubCategoriesSection.classList.remove("show");
     showActiveCategoryInSidebar(categoriesArray);
 
-    // get new posts related to the selected category
-    const { data: postsInfos } = await getPosts();
-    renderPosts(postsInfos.posts);
+    // show related posts based on selected category
+    getAndRenderPosts();
   });
 };
 
@@ -142,14 +140,13 @@ const sidebarSubCategoryClickHandler = (categoriesArray) => {
   );
 
   allSubCategoriesElements.forEach((subCategoryElement) => {
-    subCategoryElement.addEventListener("click", async () => {
+    subCategoryElement.addEventListener("click", () => {
       const subCategoryID = subCategoryElement.dataset.subCategoryId;
       setUrlParam("categoryId", subCategoryID);
       showActiveCategoryInSidebar(categoriesArray);
 
-      // get new posts related to the selected category
-      const { data: postsInfos } = await getPosts();
-      renderPosts(postsInfos.posts);
+      // show related posts based on selected category
+      getAndRenderPosts();
     });
   });
 };
@@ -160,15 +157,14 @@ const sidebarNestedCategoryClickHandler = (categoriesArray) => {
   );
 
   allNestedCategories.forEach((nestedCategory) => {
-    nestedCategory.addEventListener("click", async (e) => {
+    nestedCategory.addEventListener("click", (e) => {
       e.stopPropagation();
       const nestedCategoryID = nestedCategory.dataset.nestedCategoryId;
       setUrlParam("categoryId", nestedCategoryID);
       showActiveCategoryInSidebar(categoriesArray);
 
-      // get new posts related to the selected category
-      const { data: postsInfos } = await getPosts();
-      renderPosts(postsInfos.posts);
+      // show related posts based on selected category
+      getAndRenderPosts();
     });
   });
 };

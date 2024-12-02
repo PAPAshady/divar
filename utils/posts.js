@@ -1,5 +1,9 @@
 import { baseApiUrl, filesUrl } from "./constants.js";
-import { calculateRelativeTime } from "./sharedUtils.js";
+import {
+  calculateRelativeTime,
+  setLoader,
+  removeLoader,
+} from "./sharedUtils.js";
 
 const getPosts = async () => {
   const urlParams = new URLSearchParams(location.search).toString();
@@ -68,4 +72,12 @@ const renderPosts = (postsArray) => {
   postsWrapper.insertAdjacentHTML("beforeend", allPosts);
 };
 
-export { getPosts, renderPosts };
+const getAndRenderPosts = async () => {
+  const postsLoader = document.getElementById("postsLoader");
+  setLoader(postsLoader);
+  const { data: postsInfos } = await getPosts();
+  renderPosts(postsInfos.posts);
+  removeLoader(postsLoader);
+};
+
+export { getPosts, renderPosts, getAndRenderPosts };
