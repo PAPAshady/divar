@@ -9,11 +9,12 @@ import {
   sidebarAccordionsHandler,
   sidebarSelectBoxesHandler,
   selectBoxOptionClickHandler,
+  // sidebarSubCategoryClickHandler,
 } from "../../utils/sidebar.js";
 
-window.sidebarSubCategoryClickHandler = sidebarSubCategoryClickHandler;
-window.sidebarNestedCategoryClickHandler = sidebarNestedCategoryClickHandler; 
-window.selectBoxOptionClickHandler = selectBoxOptionClickHandler; 
+// window.sidebarSubCategoryClickHandler = sidebarSubCategoryClickHandler;
+window.sidebarNestedCategoryClickHandler = sidebarNestedCategoryClickHandler;
+window.selectBoxOptionClickHandler = selectBoxOptionClickHandler;
 
 const $ = document;
 const postsWrapper = $.getElementById("postsWrapper");
@@ -24,10 +25,12 @@ window.addEventListener("load", async () => {
   const selectedCities = getFromLocalStorage("cities");
   const postsResponse = await getPosts(selectedCities[0].id);
   const categoriesResponse = await getAllCategories();
+  const categories = categoriesResponse.data.categories;
   renderPosts(postsResponse.data.posts, postsWrapper, noPostsAlertBox);
-  renderCategoriesInSideBar(categoriesResponse.data.categories, sidebarCategoriesWrapper);
-  showActiveCategoryInSidebar(categoriesResponse.data.categories)
-  sidebarAccordionsHandler()
-  sidebarSelectBoxesHandler()
+  renderCategoriesInSideBar(categories, sidebarCategoriesWrapper);
+  showActiveCategoryInSidebar(categories);
+  sidebarSubCategoryClickHandler(categories);
+  sidebarAccordionsHandler();
+  sidebarSelectBoxesHandler();
   removeLoader();
 });

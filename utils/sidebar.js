@@ -73,7 +73,6 @@ const renderSubCategoriesInSideBar = (subCategoriesArray) => {
           <a
             href="Javascript:void(0)"
             class="sidebar__sub-category-link"
-            onclick="sidebarSubCategoryClickHandler(this, '${subCategory._id}')"
           >
             <span class="sidebar__sub-category-link-text"
               >${subCategory.title}</span
@@ -111,25 +110,29 @@ const renderSubCategoriesInSideBar = (subCategoriesArray) => {
   sidebarSubCategoriesSection.classList.add("show");
 };
 
-const sidebarSubCategoryClickHandler = (element, subCategoryID) => {
+const sidebarSubCategoryClickHandler = (categoriesArray) => {
   const allSubCategoriesElements = document.querySelectorAll(
     ".sidebar__sub-category"
   );
 
-  allSubCategoriesElements.forEach((element) => {
-    element.classList.remove("active");
+  allSubCategoriesElements.forEach((subCategoryElement) => {
+    subCategoryElement.addEventListener("click", () => {
+      const subCategoryID = subCategoryElement.dataset.subCategoryId;
+
+      allSubCategoriesElements.forEach((elem) =>
+        elem.parentElement.classList.remove("active")
+      );
+
+      // remove '.active' class from all nested categories elements in case user clicks on any sub category
+      document
+        .querySelectorAll(".sidebar__sub-category-nesetd-category")
+        .forEach((nestedCategoryElem) =>
+          nestedCategoryElem.classList.remove("active")
+        );
+      setUrlParam("categoryID", subCategoryID);
+      showActiveCategoryInSidebar(categoriesArray);
+    });
   });
-
-  // remove '.active' class from all nested categories elements in case user clicks on any sub category
-  document
-    .querySelectorAll(".sidebar__sub-category-nesetd-category")
-    .forEach((nestedCategoryElem) =>
-      nestedCategoryElem.classList.remove("active")
-    );
-
-  element.parentElement.classList.add("active");
-  setUrlParam("categoryID", subCategoryID);
-  location.reload();
 };
 
 const sidebarNestedCategoryClickHandler = (element, nestedCategoryID) => {
