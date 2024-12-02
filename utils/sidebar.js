@@ -43,9 +43,6 @@ const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
       );
       setUrlParam("categoryID", selectedCategory._id);
       showActiveCategoryInSidebar(categoriesArray);
-
-      // attach event listener to updated subCategories in sidebar.
-      sidebarSubCategoryClickHandler(categoriesArray);
     });
   });
 
@@ -217,6 +214,9 @@ const showActiveCategoryInSidebar = (categoriesArray) => {
 
     // Render the subcategories of the current main category in the sidebar.
     renderSubCategoriesInSideBar(currentMainCategory.subCategories);
+
+    // Attach event listener to updated subCategories in sidebar.
+    sidebarSubCategoryClickHandler(categoriesArray);
 
     // Highlight the selected subcategory in the sidebar (if it exists).
     const currentSubCategoryElement = document.querySelector(
