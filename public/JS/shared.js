@@ -69,4 +69,5 @@ window.popularSearchClickHandler = (popularSearchTag) => {
   setUrlParam("search", popularSearchTag);
   getAndRenderPosts();
   hideModal(".header", "show-search-drop-down");
+  globalSearchInput.value = popularSearchTag
 };
