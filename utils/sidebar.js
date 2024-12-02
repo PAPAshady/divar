@@ -43,6 +43,9 @@ const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
       );
       setUrlParam("categoryID", selectedCategory._id);
       showActiveCategoryInSidebar(categoriesArray);
+
+      // Attach event listener to updated subCategories in sidebar.
+      sidebarSubCategoryClickHandler(categoriesArray);
     });
   });
 
@@ -54,7 +57,10 @@ const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
   });
 };
 
-const renderSubCategoriesInSideBar = (subCategoriesArray) => {
+const renderSubCategoriesInSideBar = (
+  subCategoriesArray,
+  allCategoriesArray
+) => {
   const sidebarSubCategoriesWrapper = document.getElementById(
     "sidebarSubCategoriesWrapper"
   );
@@ -87,7 +93,6 @@ const renderSubCategoriesInSideBar = (subCategoriesArray) => {
                 (nestedCategory) =>
                   `<li
                     class="sidebar__sub-category-nesetd-category"
-                    onclick="sidebarNestedCategoryClickHandler(this, '${nestedCategory._id}')"
                     data-nested-category-id="${nestedCategory._id}"
                   >
                     <a
@@ -108,6 +113,9 @@ const renderSubCategoriesInSideBar = (subCategoriesArray) => {
     subCategoriesElements
   );
   sidebarSubCategoriesSection.classList.add("show");
+
+  // Attach event listener to updated nestedCategories in sidebar.
+  sidebarNestedCategoryClickHandler(allCategoriesArray);
 };
 
 const sidebarSubCategoryClickHandler = (categoriesArray) => {
@@ -118,33 +126,25 @@ const sidebarSubCategoryClickHandler = (categoriesArray) => {
   allSubCategoriesElements.forEach((subCategoryElement) => {
     subCategoryElement.addEventListener("click", () => {
       const subCategoryID = subCategoryElement.dataset.subCategoryId;
-
-      allSubCategoriesElements.forEach((elem) =>
-        elem.parentElement.classList.remove("active")
-      );
-
-      // remove '.active' class from all nested categories elements in case user clicks on any sub category
-      document
-        .querySelectorAll(".sidebar__sub-category-nesetd-category")
-        .forEach((nestedCategoryElem) =>
-          nestedCategoryElem.classList.remove("active")
-        );
       setUrlParam("categoryID", subCategoryID);
       showActiveCategoryInSidebar(categoriesArray);
     });
   });
 };
 
-const sidebarNestedCategoryClickHandler = (element, nestedCategoryID) => {
+const sidebarNestedCategoryClickHandler = (categoriesArray) => {
   const allNestedCategories = document.querySelectorAll(
     ".sidebar__sub-category-nesetd-category"
   );
-  allNestedCategories.forEach((nestedCategoryElem) =>
-    nestedCategoryElem.classList.remove("active")
-  );
-  element.classList.add("active");
-  setUrlParam("categoryID", nestedCategoryID);
-  location.reload();
+
+  allNestedCategories.forEach((nestedCategory) => {
+    nestedCategory.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const nestedCategoryID = nestedCategory.dataset.nestedCategoryId;
+      setUrlParam("categoryID", nestedCategoryID);
+      showActiveCategoryInSidebar(categoriesArray);
+    });
+  });
 };
 
 // This function runs on every page load to check if a specific category is selected.
@@ -213,9 +213,11 @@ const showActiveCategoryInSidebar = (categoriesArray) => {
     sidebarSubCategoriesSectionTitle.textContent = currentMainCategory.title;
 
     // Render the subcategories of the current main category in the sidebar.
-    renderSubCategoriesInSideBar(currentMainCategory.subCategories);
+    renderSubCategoriesInSideBar(
+      currentMainCategory.subCategories,
+      categoriesArray
+    );
 
-    // Attach event listener to updated subCategories in sidebar.
     sidebarSubCategoryClickHandler(categoriesArray);
 
     // Highlight the selected subcategory in the sidebar (if it exists).

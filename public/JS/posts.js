@@ -3,15 +3,12 @@ import { getFromLocalStorage, removeLoader } from "../../utils/sharedUtils.js";
 import { getAllCategories } from "../../utils/categories.js";
 import {
   renderCategoriesInSideBar,
-  sidebarSubCategoryClickHandler,
-  sidebarNestedCategoryClickHandler,
   showActiveCategoryInSidebar,
   sidebarAccordionsHandler,
   sidebarSelectBoxesHandler,
   selectBoxOptionClickHandler,
 } from "../../utils/sidebar.js";
 
-window.sidebarNestedCategoryClickHandler = sidebarNestedCategoryClickHandler;
 window.selectBoxOptionClickHandler = selectBoxOptionClickHandler;
 
 const $ = document;
@@ -27,7 +24,6 @@ window.addEventListener("load", async () => {
   renderPosts(postsResponse.data.posts, postsWrapper, noPostsAlertBox);
   renderCategoriesInSideBar(categories, sidebarCategoriesWrapper);
   showActiveCategoryInSidebar(categories);
-  sidebarSubCategoryClickHandler(categories);
   sidebarAccordionsHandler();
   sidebarSelectBoxesHandler();
   removeLoader();
