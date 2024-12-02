@@ -96,6 +96,14 @@ const findParentElementByClassName = (element, className) => {
   return element;
 };
 
+const showModal = (selector, className) => {
+  document.querySelector(selector).classList.add(className);
+};
+
+const hideModal = (selector, className) => {
+  document.querySelector(selector).classList.remove(className);
+};
+
 export {
   setCookie,
   removeCookie,
@@ -110,4 +118,6 @@ export {
   setUrlParam,
   removeUrlParam,
   findParentElementByClassName,
+  showModal,
+  hideModal,
 };
