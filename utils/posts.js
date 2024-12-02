@@ -1,8 +1,9 @@
 import { baseApiUrl, filesUrl } from "./constants.js";
 import { calculateRelativeTime } from "./sharedUtils.js";
 
-const getPosts = async (cityID) => {
-  const res = await fetch(`${baseApiUrl}post/?city=${cityID}`);
+const getPosts = async () => {
+  const urlParams = new URLSearchParams(location.search).toString()
+  const res = await fetch(`${baseApiUrl}post/?${urlParams}`);
   return await res.json();
 };
 
