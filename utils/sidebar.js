@@ -41,7 +41,7 @@ const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
       const selectedCategory = categoriesArray.find(
         (category) => category._id === categoryElement.dataset.categoryId
       );
-      setUrlParam("categoryID", selectedCategory._id);
+      setUrlParam("categoryId", selectedCategory._id);
       showActiveCategoryInSidebar(categoriesArray);
 
       // Attach event listener to updated subCategories in sidebar.
@@ -56,7 +56,7 @@ const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
     );
     // remove all dynamic categories filters if user click on back btn of category menu in sidebar.
     dynamicCategoryFiltersWrapper.innerHTML = "";
-    removeUrlParam("categoryID");
+    removeUrlParam("categoryId");
     sidebarSubCategoriesSection.classList.remove("show");
     showActiveCategoryInSidebar(categoriesArray);
   });
@@ -131,7 +131,7 @@ const sidebarSubCategoryClickHandler = (categoriesArray) => {
   allSubCategoriesElements.forEach((subCategoryElement) => {
     subCategoryElement.addEventListener("click", () => {
       const subCategoryID = subCategoryElement.dataset.subCategoryId;
-      setUrlParam("categoryID", subCategoryID);
+      setUrlParam("categoryId", subCategoryID);
       showActiveCategoryInSidebar(categoriesArray);
     });
   });
@@ -146,7 +146,7 @@ const sidebarNestedCategoryClickHandler = (categoriesArray) => {
     nestedCategory.addEventListener("click", (e) => {
       e.stopPropagation();
       const nestedCategoryID = nestedCategory.dataset.nestedCategoryId;
-      setUrlParam("categoryID", nestedCategoryID);
+      setUrlParam("categoryId", nestedCategoryID);
       showActiveCategoryInSidebar(categoriesArray);
     });
   });
@@ -158,7 +158,7 @@ const showActiveCategoryInSidebar = (categoriesArray) => {
   const sidebarSubCategoriesSectionTitle = document.getElementById(
     "sidebarSubCategoriesSectionTitle"
   );
-  const currentCategoryID = getUrlParam("categoryID");
+  const currentCategoryID = getUrlParam("categoryId");
 
   // Check if 'currentCategoryID' exists.
   // If it doesn't exist, the user hasn't selected any category.
