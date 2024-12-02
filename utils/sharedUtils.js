@@ -37,9 +37,9 @@ const removeFromLocalStorage = (key) => {
   localStorage.removeItem(key);
 };
 
-const removeLoader = (loaderElement) => {
-  loaderElement.classList.remove("show");
-};
+const removeLoader = (loaderElement) => loaderElement.classList.remove("show");
+
+const setLoader = (loaderElement) => loaderElement.classList.add("show");
 
 const calculateRelativeTime = (dateString) => {
   const date = new Date(dateString);
@@ -101,6 +101,7 @@ export {
   removeCookie,
   getCookie,
   removeLoader,
+  setLoader,
   setToLocalStorage,
   getFromLocalStorage,
   removeFromLocalStorage,
