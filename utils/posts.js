@@ -2,19 +2,22 @@ import { baseApiUrl, filesUrl } from "./constants.js";
 import { calculateRelativeTime } from "./sharedUtils.js";
 
 const getPosts = async () => {
-  const urlParams = new URLSearchParams(location.search).toString()
+  const urlParams = new URLSearchParams(location.search).toString();
   const res = await fetch(`${baseApiUrl}post/?${urlParams}`);
   return await res.json();
 };
 
-const renderPosts = (postsArray, wrapperElement, alertBox) => {
-  wrapperElement.innerHTML = "";
+const renderPosts = (postsArray) => {
+  const postsWrapper = document.getElementById("postsWrapper");
+  const noPostsAlertBox = document.getElementById("noPostsAlertBox");
+
+  postsWrapper.innerHTML = "";
 
   if (!postsArray.length) {
-    alertBox.classList.add("show");
+    noPostsAlertBox.classList.add("show");
     return;
   }
-  alertBox.classList.remove("show");
+  noPostsAlertBox.classList.remove("show");
 
   const allPosts = postsArray
     .map(
@@ -62,7 +65,7 @@ const renderPosts = (postsArray, wrapperElement, alertBox) => {
     )
     .join("");
 
-  wrapperElement.insertAdjacentHTML("beforeend", allPosts);
+  postsWrapper.insertAdjacentHTML("beforeend", allPosts);
 };
 
 export { getPosts, renderPosts };

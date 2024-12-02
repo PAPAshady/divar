@@ -6,7 +6,10 @@ import {
   findParentElementByClassName,
 } from "./sharedUtils.js";
 
-const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
+const renderCategoriesInSideBar = (categoriesArray) => {
+  const sidebarCategoriesWrapper = document.getElementById(
+    "sidebarCategoriesWrapper"
+  );
   const sidebarSubCategoriesSection = document.getElementById(
     "sidebarSubCategoriesSection"
   );
@@ -14,7 +17,7 @@ const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
     "sidebarSubCategoriesMenuBackBtn"
   );
 
-  wrapperElement.innerHTML = "";
+  sidebarCategoriesWrapper.innerHTML = "";
   const mainCategories = categoriesArray
     .map(
       (category) =>
@@ -31,7 +34,7 @@ const renderCategoriesInSideBar = (categoriesArray, wrapperElement) => {
         </li>`
     )
     .join("");
-  wrapperElement.insertAdjacentHTML("beforeend", mainCategories);
+  sidebarCategoriesWrapper.insertAdjacentHTML("beforeend", mainCategories);
 
   const mainCategoriesElements =
     document.querySelectorAll(".sidebar__category");

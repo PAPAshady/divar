@@ -11,11 +11,6 @@ import {
 
 window.selectBoxOptionClickHandler = selectBoxOptionClickHandler;
 
-const $ = document;
-const postsWrapper = $.getElementById("postsWrapper");
-const noPostsAlertBox = $.getElementById("noPostsAlertBox");
-const sidebarCategoriesWrapper = $.getElementById("sidebarCategoriesWrapper");
-
 window.addEventListener("load", async () => {
   const [postsResponse, categoriesResponse] = await Promise.all([
     getPosts(),
@@ -23,8 +18,8 @@ window.addEventListener("load", async () => {
   ]);
   const categories = categoriesResponse.data.categories;
   const posts = postsResponse.data.posts;
-  renderPosts(posts, postsWrapper, noPostsAlertBox);
-  renderCategoriesInSideBar(categories, sidebarCategoriesWrapper);
+  renderPosts(posts);
+  renderCategoriesInSideBar(categories);
   showActiveCategoryInSidebar(categories);
   sidebarAccordionsHandler();
   sidebarSelectBoxesHandler();
