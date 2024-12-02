@@ -396,6 +396,10 @@ const renderCategoryFiltersInSidebar = (categoryFiltersArray) => {
     .join("");
 
   categoryFiltersWrapper.insertAdjacentHTML("beforeend", allFilterElements);
+
+  // Attach event listeres to accordions and select boxes after rendering them in sidebar.
+  sidebarAccordionsHandler();
+  sidebarSelectBoxesHandler();
   selectBoxSearchInputHandler(categoryFiltersArray);
 };
 
